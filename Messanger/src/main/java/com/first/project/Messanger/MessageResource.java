@@ -42,13 +42,14 @@ public class MessageResource {
 	@Path("/{messageId}")
 	public List<Message> getMessage(@PathParam("messageId") long id) {
 		return MessageService.getMessage(id);
+		
 	}
 
 	@POST
 	public List<Message> postMessage(Message msg) throws SQLException {
 		return MessageService.postMessage(msg);
 	}
-
+	//update
 	@PUT
 	@Path("/{messageId}")
 	public List<Message> updateMessage(@PathParam("messageId") long id, Message msg) {
