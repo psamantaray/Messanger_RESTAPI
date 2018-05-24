@@ -37,10 +37,10 @@ public class MessageResource {
 		}	
 		return MessageService.getAllMessages();
 	}
-
 	@GET
 	@Path("/{messageId}")
 	public List<Message> getMessage(@PathParam("messageId") long id) {
+		System.out.println("Get Request");
 		return MessageService.getMessage(id);
 		
 	}
