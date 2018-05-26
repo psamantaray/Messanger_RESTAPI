@@ -28,7 +28,6 @@ public class MessageResource {
 
 	@GET
 	 public List<Message> getAllMessages(@BeanParam ParamBeans pbins){
-		System.out.println("Hello Get");
 		if(pbins.getYear() >0) {
 			return MessageService.getMessagesForYear(pbins.getYear());
 			
