@@ -108,7 +108,7 @@ public class CommonBusinessFunction extends TestRunner {
 		TCXHomePage.messaging.click();
 		TCXHomePage.utility.click();
 		TCXHomePage.importAction.click();
-		TCXHomePage.MessageOrg.sendKeys("Synergy Test");
+		TCXHomePage.MessageOrg.sendKeys("Synergy Test Customer");
 		Thread.sleep(5000);
 		Actions act = new Actions(driver);
 		java.util.List<WebElement> lst = driver.findElements(By.xpath("//div[@class='tt-dataset tt-dataset-0']/div"));
@@ -118,9 +118,10 @@ public class CommonBusinessFunction extends TestRunner {
 		System.out.println(lst.size());
 		
 		WebElement text = driver.findElement(By.xpath(""));
-		act.moveToElement(driver.findElement(By.xpath("//div[@class='tt-menu tt-open']/div/div[2]"))).click().perform();
+		act.moveToElement(driver.findElement(By.xpath("//div[@class='tt-menu tt-open']/div/div"))).click().build().perform();
+		Thread.sleep(3000);
 		Select sel = new Select(TCXHomePage.documentType);
-		sel.deselectByVisibleText("Order");
+		sel.selectByVisibleText("AdapterProfileRoute");
 		sel= new Select(TCXHomePage.AgentuserID);
 		sel.selectByIndex(1);
 		sel = new Select(TCXHomePage.fileFormat);
