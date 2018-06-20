@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
+  <parameter name="loginType" value="NH"/>
   <parameter name="browser" value="firefox"/>
   <parameter name="appUrl" value="https://network-rctp.qa.gtnexus.com"/>
   <test name="Test(failed)">
+    <parameter name="loginType" value="NH"/>
     <parameter name="browser" value="firefox"/>
     <parameter name="appUrl" value="https://network-rctp.qa.gtnexus.com"/>
     <classes>

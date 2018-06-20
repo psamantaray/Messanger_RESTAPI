@@ -1,6 +1,7 @@
 package com.businessDefination;
 
 import java.awt.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -81,11 +82,11 @@ public class CommonBusinessFunction extends TestRunner {
 	public void loginTOApplication(String loginType) {
 		DataTable datatable = new DataTable();
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
-		if(loginType.equalsIgnoreCase("NH Login")){
+		if(loginType.equalsIgnoreCase("NH")){
 			try {
 				// Thread.sleep(10000);
 				loginPage.uName.sendKeys(datatable.getValue("nhUser"));
-				loginPage.psw.sendKeys(datatable.getValue("nhUser"));
+				loginPage.psw.sendKeys(datatable.getValue("nhPsw"));
 				loginPage.loginBtn.click();
 
 			} catch (Exception e) {
@@ -109,28 +110,19 @@ public class CommonBusinessFunction extends TestRunner {
 	}
 
 	public void processUO(String filePath) throws InterruptedException {
-		TCXHomePage TCXHomePage = PageFactory.initElements(driver, TCXHomePage.class);
-		TCXHomePage.messaging.click();
-		TCXHomePage.utility.click();
-		TCXHomePage.importAction.click();
-		TCXHomePage.MessageOrg.sendKeys("Synergy Test Customer");
-		Thread.sleep(5000);
-		Actions act = new Actions(driver);
-		java.util.List<WebElement> lst = driver.findElements(By.xpath("//div[@class='tt-dataset tt-dataset-0']/div"));
+		TCXHomePage homePage = PageFactory.initElements(driver, TCXHomePage.class);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);		
+		homePage.messaging.click();
+		homePage.utility.click();
+		homePage.importAction.click();
+		homePage.MessageOrg.sendKeys("Synergy Test Customer");
 		
-		act.moveToElement(lst.get(0)).click().perform();
-		
-		System.out.println(lst.size());
-		
-		WebElement text = driver.findElement(By.xpath(""));
-		act.moveToElement(driver.findElement(By.xpath("//div[@class='tt-menu tt-open']/div/div"))).click().build().perform();
-		Thread.sleep(3000);
-		Select sel = new Select(TCXHomePage.documentType);
+		/*Select sel = new Select(homePage.documentType);
 		sel.selectByVisibleText("AdapterProfileRoute");
-		sel= new Select(TCXHomePage.AgentuserID);
+		sel= new Select(homePage.AgentuserID);
 		sel.selectByIndex(1);
-		sel = new Select(TCXHomePage.fileFormat);
-		sel.selectByVisibleText("TradeCard XML v3.10");
+		sel = new Select(homePage.fileFormat);
+		sel.selectByVisibleText("TradeCard XML v3.10");*/
 		
 	}
 }

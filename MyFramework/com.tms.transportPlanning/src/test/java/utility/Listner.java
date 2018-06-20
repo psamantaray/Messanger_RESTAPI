@@ -36,7 +36,7 @@ public class Listner extends TestRunner implements ITestListener {
 		
 		UtilityMethods.captureScreenshot(driver, result.getName());
 		System.out.println("Screenshot Captured!");
-		driver.close();
+		//driver.close();
 	}
 
 	@Override

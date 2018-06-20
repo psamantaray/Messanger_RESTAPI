@@ -6,27 +6,24 @@ import org.openqa.selenium.support.FindBy;
 public class TCXHomePage {
 	
 	@FindBy(xpath="//div[@id='gtn-navbar']/header/ul/li[6]/a/span")
-	public static WebElement messaging;
+	public WebElement messaging;
 	
 	@FindBy(xpath="//a[@id='navmenu__utility']")
-	public static WebElement utility;
+	public  WebElement utility;
 	
 	@FindBy(xpath="//a[text()='Import Message Action Receive']")
-	public static WebElement importAction;
+	public  WebElement importAction;
 	
 	@FindBy(id="importOrgId-typeahead")
-	public static WebElement MessageOrg;
+	public  WebElement MessageOrg;
 	
 	@FindBy(id="importDocType")
-	public static WebElement documentType;
+	public  WebElement documentType;
 	
 	@FindBy(id="importFormat")
-	public static WebElement fileFormat;
+	public  WebElement fileFormat;
 	
 	@FindBy(id="importAgentUserId")
-	public static WebElement AgentuserID;
-	
-	
-	
+	public  WebElement AgentuserID;
 	
 }

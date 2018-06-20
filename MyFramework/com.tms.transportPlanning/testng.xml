@@ -4,7 +4,7 @@
   <test thread-count="5" name="Test">
   <parameter name="browser" value="firefox"></parameter>
   <parameter name="appUrl" value="https://network-rctp.qa.gtnexus.com"></parameter>
-   <parameter name="loginType" value="NH User"></parameter>
+   <parameter name="loginType" value="NH"></parameter>
     <classes>
       <class name="com.tms.transportPlanning.TestRunner"/>
     </classes>
