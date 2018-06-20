@@ -13,7 +13,7 @@ import com.businessDefination.CommonBusinessFunction;
 import com.businessDefination.TmsObjectCreation;
 
 import dataTable.DataTable;
-//@Listeners({utility.Listner.class})
+@Listeners({utility.Listner.class})
 
 
 
@@ -25,17 +25,17 @@ public class TestRunner {
 	public static String dataFileLoc; 
 	public static DataTable dataTable = null;
 	public static Properties p = null;
-	public static String ORFileLoc = null;
+	public static String ORFileLoc = System.getProperty("user.dir")+"\\OR.properties";
 	
 	
 	@Test
-	@Parameters({"browser","appUrl","uname","psw"})
-	public void Executer(String browser, String appUrl, String uname, String psw) throws InterruptedException{
+	@Parameters({"browser","appUrl","loginType"})
+	public void Executer(String browser, String appUrl, String loginType) throws InterruptedException{
 		
 		commBusinessFun = new CommonBusinessFunction();
 		commBusinessFun.launchBrowser(browser);
 		commBusinessFun.launchApplication(appUrl);
-		commBusinessFun.loginTOApplication(uname,psw);
+		commBusinessFun.loginTOApplication(loginType);
 		commBusinessFun.processUO("TestPlath");
 		
 	}

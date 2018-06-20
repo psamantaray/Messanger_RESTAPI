@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 14 16:01:54 IST 2018</td>
+<td>Started on:</td><td>Tue Jun 19 10:23:32 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>36 seconds (36679 ms)</td>
+<tr><td>Total time:</td><td>24 seconds (24606 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,18 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.tms.transportPlanning.TestRunner.Executer()'><b>Executer</b><br>Test class: com.tms.transportPlanning.TestRunner<br>Parameters: firefox, https://network-rctp.qa.gtnexus.com, sp@gtnexus, bfqFDIZWkv6st@</td>
-<td><div><pre>org.openqa.selenium.InvalidSelectorException: The given selector  is either invalid or does not result in a WebElement. The following error occurred:
-InvalidSelectorError: Unable to locate an element with the xpath expression  because of the following error:
-SyntaxError: The expression is not a legal expression.
-Command duration or timeout: 13 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+<td title='com.tms.transportPlanning.TestRunner.Executer()'><b>Executer</b><br>Test class: com.tms.transportPlanning.TestRunner<br>Parameters: firefox, https://network-rctp.qa.gtnexus.com</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;gtn-navbar&apos;]/header/ul/li[6]/a/span&quot;}
+Command duration or timeout: 316 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:55:52&apos;
 System info: host: &apos;INBADPSAMANTA&apos;, ip: &apos;10.230.50.45&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=42.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 17563316-10ff-4e7c-b1a6-a85e3c223fed
-*** Element info: {Using=xpath, value=}
+Session ID: f21b65aa-6348-43d6-9893-056b1ef405e5
+*** Element info: {Using=xpath, value=//div[@id=&apos;gtn-navbar&apos;]/header/ul/li[6]/a/span}
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
@@ -94,33 +92,31 @@ Session ID: 17563316-10ff-4e7c-b1a6-a85e3c223fed
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:490)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)
-	at com.businessDefination.CommonBusinessFunction.processUO(CommonBusinessFunction.java:120)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.businessDefination.CommonBusinessFunction.processUO(CommonBusinessFunction.java:113)
 	at com.tms.transportPlanning.TestRunner.Executer(TestRunner.java:39)
-Caused by: org.openqa.selenium.InvalidSelectorException: The given selector  is either invalid or does not result in a WebElement. The following error occurred:
-InvalidSelectorError: Unable to locate an element with the xpath expression  because of the following error:
-SyntaxError: The expression is not a legal expression.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;gtn-navbar&apos;]/header/ul/li[6]/a/span&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:55:52&apos;
 System info: host: &apos;INBADPSAMANTA&apos;, ip: &apos;10.230.50.45&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.annotateInvalidSelectorError_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10633)
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10664)
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10668)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace322561962", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace322561962'><pre>org.openqa.selenium.InvalidSelectorException: The given selector  is either invalid or does not result in a WebElement. The following error occurred:
-InvalidSelectorError: Unable to locate an element with the xpath expression  because of the following error:
-SyntaxError: The expression is not a legal expression.
-Command duration or timeout: 13 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10668)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace873993427", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace873993427'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;gtn-navbar&apos;]/header/ul/li[6]/a/span&quot;}
+Command duration or timeout: 316 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:55:52&apos;
 System info: host: &apos;INBADPSAMANTA&apos;, ip: &apos;10.230.50.45&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=42.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 17563316-10ff-4e7c-b1a6-a85e3c223fed
-*** Element info: {Using=xpath, value=}
+Session ID: f21b65aa-6348-43d6-9893-056b1ef405e5
+*** Element info: {Using=xpath, value=//div[@id=&apos;gtn-navbar&apos;]/header/ul/li[6]/a/span}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -132,7 +128,10 @@ Session ID: 17563316-10ff-4e7c-b1a6-a85e3c223fed
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:490)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)
-	at com.businessDefination.CommonBusinessFunction.processUO(CommonBusinessFunction.java:120)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.businessDefination.CommonBusinessFunction.processUO(CommonBusinessFunction.java:113)
 	at com.tms.transportPlanning.TestRunner.Executer(TestRunner.java:39)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -158,22 +157,19 @@ Session ID: 17563316-10ff-4e7c-b1a6-a85e3c223fed
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.InvalidSelectorException: The given selector  is either invalid or does not result in a WebElement. The following error occurred:
-InvalidSelectorError: Unable to locate an element with the xpath expression  because of the following error:
-SyntaxError: The expression is not a legal expression.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;gtn-navbar&apos;]/header/ul/li[6]/a/span&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:55:52&apos;
 System info: host: &apos;INBADPSAMANTA&apos;, ip: &apos;10.230.50.45&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.annotateInvalidSelectorError_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10633)
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10664)
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10668)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10668)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
 </pre></div></td>
-<td>36</td>
-<td>com.tms.transportPlanning.TestRunner@3108bc</td></tr>
+<td>24</td>
+<td>com.tms.transportPlanning.TestRunner@4cf777e8</td></tr>
 </table><p>
 </body>
 </html>

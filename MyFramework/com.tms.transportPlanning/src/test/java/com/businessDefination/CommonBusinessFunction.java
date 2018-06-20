@@ -18,6 +18,7 @@ import com.pageObject.LoginPage;
 import com.pageObject.TCXHomePage;
 import com.tms.transportPlanning.TestRunner;
 
+import dataTable.DataTable;
 import stepDefination.TmsApplication;
 
 public class CommonBusinessFunction extends TestRunner {
@@ -77,16 +78,20 @@ public class CommonBusinessFunction extends TestRunner {
 	}
 
 	// Login to application
-	public void loginTOApplication(String uname, String psw) {
+	public void loginTOApplication(String loginType) {
+		DataTable datatable = new DataTable();
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
-		try {
-			// Thread.sleep(10000);
-			loginPage.uName.sendKeys(uname);
-			loginPage.psw.sendKeys(psw);
-			loginPage.loginBtn.click();
+		if(loginType.equalsIgnoreCase("NH Login")){
+			try {
+				// Thread.sleep(10000);
+				loginPage.uName.sendKeys(datatable.getValue("nhUser"));
+				loginPage.psw.sendKeys(datatable.getValue("nhUser"));
+				loginPage.loginBtn.click();
 
-		} catch (Exception e) {
-			e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		
 		}
 
 	}

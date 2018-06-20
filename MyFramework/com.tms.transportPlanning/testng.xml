@@ -4,8 +4,7 @@
   <test thread-count="5" name="Test">
   <parameter name="browser" value="firefox"></parameter>
   <parameter name="appUrl" value="https://network-rctp.qa.gtnexus.com"></parameter>
-  <parameter name="uname" value="sp@gtnexus"></parameter>
-  <parameter name="psw" value="bfqFDIZWkv6st@"></parameter>
+   <parameter name="loginType" value="NH User"></parameter>
     <classes>
       <class name="com.tms.transportPlanning.TestRunner"/>
     </classes>

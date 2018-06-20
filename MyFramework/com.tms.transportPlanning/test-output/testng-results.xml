@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="36679" started-at="2018-06-14T10:31:54Z" finished-at="2018-06-14T10:32:30Z">
+  <suite name="Suite" duration-ms="24606" started-at="2018-06-19T04:53:32Z" finished-at="2018-06-19T04:53:57Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="36679" started-at="2018-06-14T10:31:54Z" finished-at="2018-06-14T10:32:30Z">
+    <test name="Test" duration-ms="24606" started-at="2018-06-19T04:53:32Z" finished-at="2018-06-19T04:53:57Z">
       <class name="com.tms.transportPlanning.TestRunner">
-        <test-method status="FAIL" signature="Executer(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@3108bc]" name="Executer" duration-ms="36654" started-at="2018-06-14T16:01:54Z" finished-at="2018-06-14T16:02:30Z">
+        <test-method status="FAIL" signature="Executer(java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@4cf777e8]" name="Executer" duration-ms="24389" started-at="2018-06-19T10:23:32Z" finished-at="2018-06-19T10:23:56Z">
           <params>
             <param index="0">
               <value>
@@ -19,43 +19,29 @@
                 <![CDATA[https://network-rctp.qa.gtnexus.com]]>
               </value>
             </param>
-            <param index="2">
-              <value>
-                <![CDATA[sp@gtnexus]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[bfqFDIZWkv6st@]]>
-              </value>
-            </param>
           </params>
-          <exception class="org.openqa.selenium.InvalidSelectorException">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[The given selector  is either invalid or does not result in a WebElement. The following error occurred:
-InvalidSelectorError: Unable to locate an element with the xpath expression  because of the following error:
-SyntaxError: The expression is not a legal expression.
-Command duration or timeout: 13 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//div[@id='gtn-navbar']/header/ul/li[6]/a/span"}
+Command duration or timeout: 316 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
 System info: host: 'INBADPSAMANTA', ip: '10.230.50.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=42.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 17563316-10ff-4e7c-b1a6-a85e3c223fed
-*** Element info: {Using=xpath, value=}]]>
+Session ID: f21b65aa-6348-43d6-9893-056b1ef405e5
+*** Element info: {Using=xpath, value=//div[@id='gtn-navbar']/header/ul/li[6]/a/span}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.InvalidSelectorException: The given selector  is either invalid or does not result in a WebElement. The following error occurred:
-InvalidSelectorError: Unable to locate an element with the xpath expression  because of the following error:
-SyntaxError: The expression is not a legal expression.
-Command duration or timeout: 13 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//div[@id='gtn-navbar']/header/ul/li[6]/a/span"}
+Command duration or timeout: 316 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
 System info: host: 'INBADPSAMANTA', ip: '10.230.50.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=42.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 17563316-10ff-4e7c-b1a6-a85e3c223fed
-*** Element info: {Using=xpath, value=}
+Session ID: f21b65aa-6348-43d6-9893-056b1ef405e5
+*** Element info: {Using=xpath, value=//div[@id='gtn-navbar']/header/ul/li[6]/a/span}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -67,7 +53,10 @@ Session ID: 17563316-10ff-4e7c-b1a6-a85e3c223fed
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:490)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)
-	at com.businessDefination.CommonBusinessFunction.processUO(CommonBusinessFunction.java:120)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.businessDefination.CommonBusinessFunction.processUO(CommonBusinessFunction.java:113)
 	at com.tms.transportPlanning.TestRunner.Executer(TestRunner.java:39)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -93,22 +82,19 @@ Session ID: 17563316-10ff-4e7c-b1a6-a85e3c223fed
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.InvalidSelectorException: The given selector  is either invalid or does not result in a WebElement. The following error occurred:
-InvalidSelectorError: Unable to locate an element with the xpath expression  because of the following error:
-SyntaxError: The expression is not a legal expression.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//div[@id='gtn-navbar']/header/ul/li[6]/a/span"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:55:52'
 System info: host: 'INBADPSAMANTA', ip: '10.230.50.45', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.annotateInvalidSelectorError_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10633)
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10664)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10668)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous4431456004726920110webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10668)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/PSAMAN~1/AppData/Local/Temp/anonymous753386179670466088webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Executer -->

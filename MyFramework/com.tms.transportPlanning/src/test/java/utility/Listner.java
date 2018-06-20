@@ -1,5 +1,8 @@
 package utility;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -11,6 +14,13 @@ public class Listner extends TestRunner implements ITestListener {
 	@Override
 	public void onTestStart(ITestResult result) {
 		System.out.println("Test case Execution Started!");
+		System.out.println("Test Case Name: "+result.getName());
+		long startTimeMiliSecond = result.getStartMillis();
+		Date date = new Date(startTimeMiliSecond);
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+		String startDateAndTime = format.format(date);
+		System.out.println("Test case Execution Start Time: "+ startDateAndTime);
+		
 		
 	}
 
@@ -23,9 +33,10 @@ public class Listner extends TestRunner implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		System.out.println("Test Case Execution Failed!");
-		Screenshot.captureScreenshot(driver, result.getName());
-		System.out.println("Screenshot Captured!");
 		
+		UtilityMethods.captureScreenshot(driver, result.getName());
+		System.out.println("Screenshot Captured!");
+		driver.close();
 	}
 
 	@Override

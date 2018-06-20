@@ -24,9 +24,9 @@ public class DataTable extends TestRunner{
 	 
 	 public DataTable(){
 		 try {
-			 fin_excel = new FileInputStream(dataFileLoc);
+			 //fin_excel = new FileInputStream(dataFileLoc);
 			 fin_ORprop = new FileInputStream(ORFileLoc);
-			 wb = new XSSFWorkbook(fin_excel);
+			 //wb = new XSSFWorkbook(fin_excel);
 			 p = new Properties();
 			 p.load(fin_ORprop);
 		 }

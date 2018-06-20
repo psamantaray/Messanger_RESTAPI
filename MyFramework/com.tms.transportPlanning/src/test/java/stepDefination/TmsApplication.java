@@ -50,7 +50,7 @@ public class TmsApplication extends TestRunner {
 
 	@When("^user logged in with valid username and password$")
 	public void user_logged_in_with_valid_username_and_password() throws Throwable {
-		commBusinessFun.loginTOApplication(dataTable.getValue("nhUser"), dataTable.getValue("nhPsw"));
+		commBusinessFun.loginTOApplication(dataTable.getValue("nhUser"));
 	}
 
 	@Then("^home page should be displayed$")
