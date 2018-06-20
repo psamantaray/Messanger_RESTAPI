@@ -35,9 +35,13 @@ public class TestRunner {
 		commBusinessFun.launchBrowser(browser);
 		commBusinessFun.launchApplication(appUrl);
 		commBusinessFun.loginTOApplication(loginType);
-		String orderNumber = commBusinessFun.processUO("C:\\Users\\psamantaray\\Desktop\\10865_UO.XML");
-		System.out.println("Order Created Successfully!!");
-		System.out.println("Order Number: "+orderNumber);
+		//String orderNumber = commBusinessFun.createUO("C:\\Users\\sony\\Desktop\\10865_UO.XML");
+		//System.out.println("Order Created Successfully!!");
+		//System.out.println("Order Number: "+orderNumber);
+		
+		//Switch to GTNX Application
+		commBusinessFun.switchToGTNXAppFromTCX();
+		commBusinessFun.shadowuserLogin("testnavuser");
 		
 	}
 	

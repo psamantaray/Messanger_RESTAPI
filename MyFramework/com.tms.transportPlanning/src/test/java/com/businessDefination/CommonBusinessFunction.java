@@ -12,8 +12,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.pageObject.GtnexusNHHomePage;
 import com.pageObject.LoginPage;
 import com.pageObject.TCXHomePage;
 import com.tms.transportPlanning.TestRunner;
@@ -97,21 +100,52 @@ public class CommonBusinessFunction extends TestRunner {
 
 	}
 
-	public void shadowuserLogin(String uname) {
+	public boolean shadowuserLogin(String uname) throws InterruptedException {
+		DataTable datatable = new DataTable();
+		GtnexusNHHomePage gtnHomePage = PageFactory.initElements(driver, GtnexusNHHomePage.class);
 		try {
-			driver.findElement(By.linkText("Home")).click();
+			if (!(driver.getTitle().equals("Welcome")))
+				driver.findElement(By.linkText("Home")).click();
 		} catch (Exception e) {
 			System.out.println("You are not in your Home page, current page title: " + driver.getTitle());
-			System.out.println("Navigating to your Home or Welcome page");
-			driver.findElement(By.linkText("Home")).click();
+			System.out.println("Navigating to your Home page");
+			gtnHomePage.homeLink.click();
 		}
-		driver.findElement(By.id("loginAsField-input")).sendKeys(uname);
-		driver.findElement(By.xpath("//table[@id='gtn_auto_14']/tbody/tr[2]/td[2]/em/button")).click();
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.visibilityOf(gtnHomePage.shadowUser));
+		Thread.sleep(10000);
+		gtnHomePage.shadowUser.sendKeys(datatable.getValue("shadowUser"));
+		gtnHomePage.loginButton.click();
+		
+		Thread.sleep(10000);
+		WebElement homelink = driver.findElement(By.xpath("//div[@class='toolbar']/div/h1/span"));
+		wait.until(ExpectedConditions.visibilityOf(homelink));
+		if(homelink.isDisplayed()) {
+			System.out.println("Successfully landed on Shipper user ("+uname+") page");
+		}
+		return true;
 	}
 
-	public String processUO(String filePath) throws InterruptedException {
+	public boolean switchToGTNXAppFromTCX() {
+		TCXHomePage homePage = PageFactory.initElements(driver, TCXHomePage.class);
+		try {
+			homePage.userIcon.click();
+		} catch (Exception e) {
+			System.out.println("You are not in TCX page, Login as a TCX user!");
+			e.printStackTrace();
+		}
+		homePage.switchTOGTNXNH.click();
+		if (!(driver.getTitle().equals("Welcome"))) {
+			System.out.println("Unable to ");
+			return false;
+		}
+		System.out.println("Switched to GTNX NH Successfully!");
+		return true;
+	}
+
+	public String createUO(String filePath) {
 		String orderNumber = null;
-		try{
+		try {
 			TCXHomePage homePage = PageFactory.initElements(driver, TCXHomePage.class);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			homePage.messaging.click();
@@ -125,30 +159,28 @@ public class CommonBusinessFunction extends TestRunner {
 				System.out.println("Text on the Element: " + ele.getText());
 				System.out.println("Element Is Enabled: " + ele.isEnabled());
 			}
-			allResults.get(0).click(); 
+			allResults.get(0).click();
 			Select sel = new Select(homePage.documentType);
 			sel.selectByVisibleText("Order");
 			sel = new Select(homePage.AgentuserID);
 			sel.selectByIndex(1);
 			sel = new Select(homePage.fileFormat);
 			sel.selectByVisibleText("Inbound Po");
-			
+
 			homePage.file.sendKeys(filePath);
 			homePage.importBtn.click();
 			Thread.sleep(5000);
 			Alert alt = driver.switchTo().alert();
-			//alt.wait(5000);
 			alt.dismiss();
 			homePage.messageUID.click();
 			Thread.sleep(5000);
-			if(!(homePage.boUID.getText().equals(""))){
+			if (!(homePage.boUID.getText().equals(""))) {
 				orderNumber = homePage.orderNumber.getText();
 			}
-		}
-		catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return orderNumber;
-		
+
 	}
 }
