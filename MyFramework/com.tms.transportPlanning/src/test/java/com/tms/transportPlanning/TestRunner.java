@@ -31,12 +31,13 @@ public class TestRunner {
 	@Test
 	@Parameters({"browser","appUrl","loginType"})
 	public void Executer(String browser, String appUrl, String loginType) throws InterruptedException{
-		
 		commBusinessFun = new CommonBusinessFunction();
 		commBusinessFun.launchBrowser(browser);
 		commBusinessFun.launchApplication(appUrl);
 		commBusinessFun.loginTOApplication(loginType);
-		commBusinessFun.processUO("TestPlath");
+		String orderNumber = commBusinessFun.processUO("C:\\Users\\psamantaray\\Desktop\\10865_UO.XML");
+		System.out.println("Order Created Successfully!!");
+		System.out.println("Order Number: "+orderNumber);
 		
 	}
 	

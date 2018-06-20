@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
-  <parameter name="browser" value="firefox"></parameter>
-  <parameter name="appUrl" value="https://network-rctp.qa.gtnexus.com"></parameter>
+  <parameter name="browser" value="Chrome"></parameter>
+  <parameter name="appUrl" value="https://network-supportp.qa.gtnexus.com"></parameter>
    <parameter name="loginType" value="NH"></parameter>
     <classes>
       <class name="com.tms.transportPlanning.TestRunner"/>

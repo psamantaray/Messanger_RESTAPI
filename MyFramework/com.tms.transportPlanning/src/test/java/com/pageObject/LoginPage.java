@@ -5,12 +5,12 @@ import org.openqa.selenium.support.FindBy;
 public class LoginPage {
 
 	@FindBy(id = "login")
-	public  WebElement uName;
+	public WebElement uName;
 	
 	@FindBy(id = "password")
-	public  WebElement psw;
+	public WebElement psw;
 	
 	@FindBy(id = "loginButton")
-	public  WebElement loginBtn;
+	public WebElement loginBtn;
 	
 }
