@@ -7,7 +7,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-public class Screenshot {
+public class Utility {
 
 	public static void captureScreenshot(WebDriver driver, String screenshotName) {
 		
