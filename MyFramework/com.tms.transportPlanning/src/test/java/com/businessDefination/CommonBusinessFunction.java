@@ -15,10 +15,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.mongodb.diagnostics.logging.Logger;
 import com.pageObject.GtnexusNHHomePage;
 import com.pageObject.LoginPage;
 import com.pageObject.ShipperUserHomePage;
 import com.pageObject.TCXHomePage;
+import com.relevantcodes.extentreports.LogStatus;
 import com.tms.transportPlanning.TestRunner;
 
 import dataTable.DataTable;
@@ -43,25 +46,30 @@ public class CommonBusinessFunction extends TestRunner {
 			case "firefox":
 				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\drivers\\geckodriver");
 				driver = new FirefoxDriver();
+				logger.log(LogStatus.INFO, "Firefox browser launched Successfully.");
 				break;
 
 			case "chrome":
 				System.setProperty("webdriver.chrome.driver",
 						System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
 				driver = new ChromeDriver();
+				logger.log(LogStatus.INFO, "Chrome browser launched Successfully.");
 				break;
 			case "ie":
 				System.setProperty("webdriver.ie.driver",
 						"D:\\FrameWorkData_Virtual\\Prasant_Repository\\Prasant_KeywordDriven_Framework\\BrowserServer\\IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
+				logger.log(LogStatus.INFO, "IE browser launched Successfully.");
 				break;
 			default:
 				System.out.println("Provided browser(" + browserType + ")"
 						+ "is not supported or invalid so using the default browser");
 				driver = new FirefoxDriver();
+				logger.log(LogStatus.INFO, "Default Firefox browser launched Successfully.");
 			}
 
 		} catch (Exception e) {
+			logger.log(LogStatus.FAIL, "Unable to launch the Browser, please the browser installation");
 			e.printStackTrace();
 		} finally {
 			driver.manage().window().maximize();
@@ -73,11 +81,12 @@ public class CommonBusinessFunction extends TestRunner {
 	public void launchApplication(String appUrl) {
 		try {
 			driver.get(appUrl);
+			logger.log(LogStatus.PASS, "Application launched successfully.");
+			logger.log(LogStatus.INFO, "Application url: "+appUrl);
 		} catch (Exception e) {
-			// System.out.println(applicationUrl+": is invalid or not
-			// accessible");
+			logger.log(LogStatus.FAIL, "Unable to access the Appliation url: "+appUrl);
+			logger.log(LogStatus.ERROR, "Application Url is invalid or not accessible", e);
 			e.printStackTrace();
-
 		}
 	}
 
@@ -87,12 +96,14 @@ public class CommonBusinessFunction extends TestRunner {
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 		if (loginType.equalsIgnoreCase("NH")) {
 			try {
-				// Thread.sleep(10000);
 				loginPage.uName.sendKeys(datatable.getValue("nhUser"));
 				loginPage.psw.sendKeys(datatable.getValue("nhPsw"));
 				loginPage.loginBtn.click();
+				logger.log(LogStatus.PASS, "NH user login is successful.");
 
 			} catch (Exception e) {
+				logger.log(LogStatus.FAIL, "NH user login has failed.");
+				logger.log(LogStatus.ERROR, "NH user login failed.", e);
 				e.printStackTrace();
 			}
 
@@ -113,13 +124,13 @@ public class CommonBusinessFunction extends TestRunner {
 			gtnHomePage.homeLink.click();
 		}
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-//		wait.until(ExpectedConditions.visibilityOf(gtnHomePage.shadowUser));
+		// wait.until(ExpectedConditions.visibilityOf(gtnHomePage.shadowUser));
 		Thread.sleep(10000);
 		gtnHomePage.shadowUser.sendKeys(datatable.getValue("shadowUser"));
 		gtnHomePage.loginButton.click();
 
 		Thread.sleep(10000);
-		//wait.until(ExpectedConditions.visibilityOf(homelink));
+		// wait.until(ExpectedConditions.visibilityOf(homelink));
 		if (shipperUser.homeLink.isDisplayed()) {
 			System.out.println("Successfully landed on Shipper user (" + datatable.getValue("shadowUser") + ") page");
 		}
@@ -129,8 +140,8 @@ public class CommonBusinessFunction extends TestRunner {
 	public boolean switchToGTNXAppFromTCX() {
 		TCXHomePage homePage = PageFactory.initElements(driver, TCXHomePage.class);
 		try {
-			//WebDriverWait wait = new WebDriverWait(driver, 30);
-			//wait.until(ExpectedConditions.elementToBeClickable(homePage.userIcon));
+			// WebDriverWait wait = new WebDriverWait(driver, 30);
+			// wait.until(ExpectedConditions.elementToBeClickable(homePage.userIcon));
 			homePage.userIcon.click();
 		} catch (Exception e) {
 			System.out.println("You are not in TCX page, Login as a TCX user!");
@@ -185,11 +196,11 @@ public class CommonBusinessFunction extends TestRunner {
 		return orderNumber;
 
 	}
-	
-	public void searchForTOInFlexView(String orderNumber) throws InterruptedException{
+
+	public void searchForTOInFlexView(String orderNumber) throws InterruptedException {
 		ShipperUserHomePage shipperUser = PageFactory.initElements(driver, ShipperUserHomePage.class);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		//wait.until(ExpectedConditions.visibilityOf(shipperUser.application));
+		// wait.until(ExpectedConditions.visibilityOf(shipperUser.application));
 		wait.until(ExpectedConditions.elementToBeClickable(shipperUser.application));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(2000);
