@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="85053" started-at="2018-06-20T10:04:45Z" finished-at="2018-06-20T10:06:10Z">
+  <suite name="Suite" duration-ms="140370" started-at="2018-06-21T08:58:28Z" finished-at="2018-06-21T09:00:49Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="85053" started-at="2018-06-20T10:04:45Z" finished-at="2018-06-20T10:06:10Z">
+    <test name="Test" duration-ms="140370" started-at="2018-06-21T08:58:28Z" finished-at="2018-06-21T09:00:49Z">
       <class name="com.tms.transportPlanning.TestRunner">
-        <test-method status="PASS" signature="Executer(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@6fd02e5]" name="Executer" duration-ms="85038" started-at="2018-06-20T15:34:45Z" finished-at="2018-06-20T15:36:10Z">
+        <test-method status="PASS" signature="Executer(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@58651fd0]" name="Executer" duration-ms="140357" started-at="2018-06-21T14:28:28Z" finished-at="2018-06-21T14:30:49Z">
           <params>
             <param index="0">
               <value>

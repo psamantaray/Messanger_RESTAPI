@@ -15,9 +15,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.pageObject.GtnexusNHHomePage;
 import com.pageObject.LoginPage;
+import com.pageObject.ShipperUserHomePage;
 import com.pageObject.TCXHomePage;
 import com.tms.transportPlanning.TestRunner;
 
@@ -100,9 +100,10 @@ public class CommonBusinessFunction extends TestRunner {
 
 	}
 
-	public boolean shadowuserLogin(String uname) throws InterruptedException {
+	public boolean shadowuserLogin() throws InterruptedException {
 		DataTable datatable = new DataTable();
 		GtnexusNHHomePage gtnHomePage = PageFactory.initElements(driver, GtnexusNHHomePage.class);
+		ShipperUserHomePage shipperUser = PageFactory.initElements(driver, ShipperUserHomePage.class);
 		try {
 			if (!(driver.getTitle().equals("Welcome")))
 				driver.findElement(By.linkText("Home")).click();
@@ -112,16 +113,15 @@ public class CommonBusinessFunction extends TestRunner {
 			gtnHomePage.homeLink.click();
 		}
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.visibilityOf(gtnHomePage.shadowUser));
+//		wait.until(ExpectedConditions.visibilityOf(gtnHomePage.shadowUser));
 		Thread.sleep(10000);
 		gtnHomePage.shadowUser.sendKeys(datatable.getValue("shadowUser"));
 		gtnHomePage.loginButton.click();
-		
+
 		Thread.sleep(10000);
-		WebElement homelink = driver.findElement(By.xpath("//div[@class='toolbar']/div/h1/span"));
-		wait.until(ExpectedConditions.visibilityOf(homelink));
-		if(homelink.isDisplayed()) {
-			System.out.println("Successfully landed on Shipper user ("+uname+") page");
+		//wait.until(ExpectedConditions.visibilityOf(homelink));
+		if (shipperUser.homeLink.isDisplayed()) {
+			System.out.println("Successfully landed on Shipper user (" + datatable.getValue("shadowUser") + ") page");
 		}
 		return true;
 	}
@@ -129,6 +129,8 @@ public class CommonBusinessFunction extends TestRunner {
 	public boolean switchToGTNXAppFromTCX() {
 		TCXHomePage homePage = PageFactory.initElements(driver, TCXHomePage.class);
 		try {
+			//WebDriverWait wait = new WebDriverWait(driver, 30);
+			//wait.until(ExpectedConditions.elementToBeClickable(homePage.userIcon));
 			homePage.userIcon.click();
 		} catch (Exception e) {
 			System.out.println("You are not in TCX page, Login as a TCX user!");
@@ -182,5 +184,16 @@ public class CommonBusinessFunction extends TestRunner {
 		}
 		return orderNumber;
 
+	}
+	
+	public void searchForTOInFlexView(String orderNumber) throws InterruptedException{
+		ShipperUserHomePage shipperUser = PageFactory.initElements(driver, ShipperUserHomePage.class);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		//wait.until(ExpectedConditions.visibilityOf(shipperUser.application));
+		wait.until(ExpectedConditions.elementToBeClickable(shipperUser.application));
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(2000);
+		shipperUser.application.click();
+		shipperUser.transportOrder.click();
 	}
 }

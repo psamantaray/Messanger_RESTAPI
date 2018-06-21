@@ -45,5 +45,11 @@ public class TCXHomePage {
 	@FindBy(xpath="//form[@name='tradecardForm']/table[9]/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/span/a")
 	public WebElement orderNumber;
 	
+	@FindBy(id="navmenu__user")
+	public WebElement userIcon;
+	
+	@FindBy(id="navmenu__switch to gtn nh")
+	public WebElement switchTOGTNXNH;
+	
 	
 }

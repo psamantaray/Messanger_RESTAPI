@@ -82,7 +82,7 @@ public class TmsApplication extends TestRunner {
 
 	@Given("^shadow login as a shipper user$")
 	public void shadow_login_as_a_shipper_user() throws Throwable {
-		commBusinessFun.shadowuserLogin(dataTable.getValue("shadowUser"));
+		//commBusinessFun.shadowuserLogin(dataTable.getValue("shadowUser"));
 		Thread.sleep(10000);
 	}
 
