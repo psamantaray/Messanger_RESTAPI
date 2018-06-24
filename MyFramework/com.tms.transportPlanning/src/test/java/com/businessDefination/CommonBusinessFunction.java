@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.mongodb.diagnostics.logging.Logger;
+import com.keywords.CustomExceptions;
 import com.pageObject.GtnexusNHHomePage;
 import com.pageObject.LoginPage;
 import com.pageObject.ShipperUserHomePage;
@@ -46,26 +46,26 @@ public class CommonBusinessFunction extends TestRunner {
 			case "firefox":
 				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\drivers\\geckodriver");
 				driver = new FirefoxDriver();
-				logger.log(LogStatus.INFO, "Firefox browser launched Successfully.");
+				logger.log(LogStatus.PASS, "Firefox browser launched Successfully.");
 				break;
 
 			case "chrome":
 				System.setProperty("webdriver.chrome.driver",
 						System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
 				driver = new ChromeDriver();
-				logger.log(LogStatus.INFO, "Chrome browser launched Successfully.");
+				logger.log(LogStatus.PASS, "Chrome browser launched Successfully.");
 				break;
 			case "ie":
 				System.setProperty("webdriver.ie.driver",
 						"D:\\FrameWorkData_Virtual\\Prasant_Repository\\Prasant_KeywordDriven_Framework\\BrowserServer\\IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
-				logger.log(LogStatus.INFO, "IE browser launched Successfully.");
+				logger.log(LogStatus.PASS, "IE browser launched Successfully.");
 				break;
 			default:
 				System.out.println("Provided browser(" + browserType + ")"
 						+ "is not supported or invalid so using the default browser");
 				driver = new FirefoxDriver();
-				logger.log(LogStatus.INFO, "Default Firefox browser launched Successfully.");
+				logger.log(LogStatus.PASS, "Default Firefox browser launched Successfully.");
 			}
 
 		} catch (Exception e) {
@@ -82,9 +82,9 @@ public class CommonBusinessFunction extends TestRunner {
 		try {
 			driver.get(appUrl);
 			logger.log(LogStatus.PASS, "Application launched successfully.");
-			logger.log(LogStatus.INFO, "Application url: "+appUrl);
+			logger.log(LogStatus.INFO, "Application url: " + appUrl);
 		} catch (Exception e) {
-			logger.log(LogStatus.FAIL, "Unable to access the Appliation url: "+appUrl);
+			logger.log(LogStatus.FAIL, "Unable to access the Appliation url: " + appUrl);
 			logger.log(LogStatus.ERROR, "Application Url is invalid or not accessible", e);
 			e.printStackTrace();
 		}
@@ -117,35 +117,49 @@ public class CommonBusinessFunction extends TestRunner {
 		ShipperUserHomePage shipperUser = PageFactory.initElements(driver, ShipperUserHomePage.class);
 		try {
 			if (!(driver.getTitle().equals("Welcome")))
-				driver.findElement(By.linkText("Home")).click();
+				logger.log(LogStatus.WARNING, "User is not in the Home Page");
 		} catch (Exception e) {
-			System.out.println("You are not in your Home page, current page title: " + driver.getTitle());
-			System.out.println("Navigating to your Home page");
 			gtnHomePage.homeLink.click();
+			logger.log(LogStatus.PASS, "Successfully landed on shipper user Home page");
 		}
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		// wait.until(ExpectedConditions.visibilityOf(gtnHomePage.shadowUser));
 		Thread.sleep(10000);
+
 		gtnHomePage.shadowUser.sendKeys(datatable.getValue("shadowUser"));
 		gtnHomePage.loginButton.click();
 
-		Thread.sleep(10000);
-		// wait.until(ExpectedConditions.visibilityOf(homelink));
-		if (shipperUser.homeLink.isDisplayed()) {
-			System.out.println("Successfully landed on Shipper user (" + datatable.getValue("shadowUser") + ") page");
+		try {
+			Thread.sleep(3000);
+			WebElement okBtn = driver.findElement(By.xpath("//button[text()='OK']"));
+			if (okBtn.isDisplayed()) {
+				logger.log(LogStatus.FAIL,
+						"Provided shadow user [" + datatable.getValue("shadowUser") + "] is invalid");
+				throw new CustomExceptions("Invalid user");
+			}
+
+		} catch (Exception e) {
+			
 		}
+
+		Thread.sleep(10000);
+		if (shipperUser.homeLink.isDisplayed())
+
+		{
+			// System.out.println("Successfully landed on Shipper user (" +
+			// datatable.getValue("shadowUser") + ") page");
+			logger.log(LogStatus.PASS, "Shadow user login is successful");
+		}
+		logger.log(LogStatus.INFO, "Shadow logi user: " + datatable.getValue("shadowUser"));
 		return true;
 	}
 
 	public boolean switchToGTNXAppFromTCX() {
 		TCXHomePage homePage = PageFactory.initElements(driver, TCXHomePage.class);
 		try {
-			// WebDriverWait wait = new WebDriverWait(driver, 30);
-			// wait.until(ExpectedConditions.elementToBeClickable(homePage.userIcon));
 			homePage.userIcon.click();
 		} catch (Exception e) {
-			System.out.println("You are not in TCX page, Login as a TCX user!");
 			e.printStackTrace();
+			logger.log(LogStatus.FAIL, "You are not in TCX Page.", e);
+
 		}
 		homePage.switchTOGTNXNH.click();
 		if (!(driver.getTitle().equals("Welcome"))) {
@@ -153,6 +167,7 @@ public class CommonBusinessFunction extends TestRunner {
 			return false;
 		}
 		System.out.println("Switched to GTNX NH Successfully!");
+		logger.log(LogStatus.PASS, "Switched to GTNX Admin Page is successful.");
 		return true;
 	}
 
@@ -166,12 +181,6 @@ public class CommonBusinessFunction extends TestRunner {
 			homePage.importAction.click();
 			homePage.MessageOrg.sendKeys("Synergy Test Customer");
 			List<WebElement> allResults = driver.findElements(By.xpath("//div[@class='tt-menu tt-open']/div/div"));
-			System.out.println(allResults.size());
-
-			for (WebElement ele : allResults) {
-				System.out.println("Text on the Element: " + ele.getText());
-				System.out.println("Element Is Enabled: " + ele.isEnabled());
-			}
 			allResults.get(0).click();
 			Select sel = new Select(homePage.documentType);
 			sel.selectByVisibleText("Order");

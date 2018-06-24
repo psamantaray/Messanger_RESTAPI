@@ -53,8 +53,8 @@ public class TestRunner {
 		//System.out.println("Order Number: "+orderNumber);
 		
 		//Switch to GTNX Application
-		//commBusinessFun.switchToGTNXAppFromTCX();
-		//commBusinessFun.shadowuserLogin();
+		commBusinessFun.switchToGTNXAppFromTCX();
+		commBusinessFun.shadowuserLogin();
 		//commBusinessFun.searchForTOInFlexView("orderNumber");
 		
 	}
