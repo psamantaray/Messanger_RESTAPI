@@ -34,7 +34,7 @@ public class Listner extends TestRunner implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		System.out.println("Test Case Execution Failed!");
 		
-		UtilityMethods.captureScreenshot(driver, result.getName());
+		UtilityMethods.captureScreenshot(result.getName());
 		System.out.println("Screenshot Captured!");
 		//driver.close();
 	}

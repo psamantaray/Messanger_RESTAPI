@@ -4,7 +4,6 @@
   <test thread-count="5" name="Test">
   <parameter name="browser" value="Chrome"></parameter>
   <parameter name="appUrl" value="https://network-supportp.qa.gtnexus.com"></parameter>
-   <parameter name="loginType" value="NH"></parameter>
     <classes>
       <class name="com.tms.transportPlanning.TestRunner"/>
     </classes>

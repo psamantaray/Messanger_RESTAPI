@@ -13,4 +13,7 @@ public class LoginPage {
 	@FindBy(id = "loginButton")
 	public WebElement loginBtn;
 	
+	@FindBy(id = "alertboxmessage")
+	public WebElement invalidUserAlertBox;
+	
 }

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 14 12:31:13 IST 2018</td>
+<td>Started on:</td><td>Sun Jun 24 13:58:37 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (22 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (640 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,68 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.tms.transportPlanning.TestRunner.afterExecution()'><b>afterExecution</b><br>Test class: com.tms.transportPlanning.TestRunner</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.tms.transportPlanning.TestRunner.afterExecution(TestRunner.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.afterRun(TestRunner.java:1021)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace818493590", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace818493590'><pre>java.lang.NullPointerException
+	at com.tms.transportPlanning.TestRunner.afterExecution(TestRunner.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.afterRun(TestRunner.java:1021)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,13 +137,13 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.businessDefination.CommonBusinessFunction.Executer()'><b>Executer</b><br>Test class: com.businessDefination.CommonBusinessFunction</td>
+<td title='com.tms.transportPlanning.TestRunner.Executer()'><b>Executer</b><br>Test class: com.tms.transportPlanning.TestRunner</td>
 <td><div><pre>org.testng.TestNGException: 
 Parameter &apos;browser&apos; is required by @Test on method Executer but has not been marked @Optional or defined
-in C:\Users\psamantaray\AppData\Local\Temp\testng-eclipse-2053602749\testng-customsuite.xml
+in C:\Users\sony\AppData\Local\Temp\testng-eclipse-2094670187\testng-customsuite.xml
 	at org.testng.internal.Parameters.createParameters(Parameters.java:155)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:358)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:450)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:355)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:447)
 	at org.testng.internal.Invoker.handleParameters(Invoker.java:1383)
 	at org.testng.internal.Invoker.createParameters(Invoker.java:1075)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1180)
@@ -95,19 +157,19 @@ in C:\Users\psamantaray\AppData\Local\Temp\testng-eclipse-2053602749\testng-cust
 	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1995616381", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1995616381'><pre>org.testng.TestNGException: 
+</pre></div><a href='#' onClick='toggleBox("stack-trace1644236636", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1644236636'><pre>org.testng.TestNGException: 
 Parameter &apos;browser&apos; is required by @Test on method Executer but has not been marked @Optional or defined
-in C:\Users\psamantaray\AppData\Local\Temp\testng-eclipse-2053602749\testng-customsuite.xml
+in C:\Users\sony\AppData\Local\Temp\testng-eclipse-2094670187\testng-customsuite.xml
 	at org.testng.internal.Parameters.createParameters(Parameters.java:155)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:358)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:450)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:355)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:447)
 	at org.testng.internal.Invoker.handleParameters(Invoker.java:1383)
 	at org.testng.internal.Invoker.createParameters(Invoker.java:1075)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1180)
@@ -121,15 +183,15 @@ in C:\Users\psamantaray\AppData\Local\Temp\testng-eclipse-2053602749\testng-cust
 	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>com.businessDefination.CommonBusinessFunction@3e9b1010</td></tr>
+<td>com.tms.transportPlanning.TestRunner@22a637e7</td></tr>
 </table><p>
 </body>
 </html>

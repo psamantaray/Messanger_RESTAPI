@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.businessDefination.CommonBusinessFunction">
+      <class name="com.tms.transportPlanning.TestRunner">
         <methods>
+          <include name="reporting"/>
           <include name="Executer"/>
+          <include name="afterExecution"/>
         </methods>
-      </class> <!-- com.businessDefination.CommonBusinessFunction -->
+      </class> <!-- com.tms.transportPlanning.TestRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

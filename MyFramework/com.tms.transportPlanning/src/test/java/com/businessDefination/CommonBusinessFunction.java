@@ -1,7 +1,7 @@
 package com.businessDefination;
 
+import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -21,10 +21,12 @@ import com.pageObject.GtnexusNHHomePage;
 import com.pageObject.LoginPage;
 import com.pageObject.ShipperUserHomePage;
 import com.pageObject.TCXHomePage;
+import com.pageObject.TOFlexview;
 import com.relevantcodes.extentreports.LogStatus;
 import com.tms.transportPlanning.TestRunner;
 
 import dataTable.DataTable;
+import utility.UtilityMethods;
 
 public class CommonBusinessFunction extends TestRunner {
 
@@ -39,6 +41,7 @@ public class CommonBusinessFunction extends TestRunner {
 	 * @IE
 	 */
 
+	// launch Browser
 	public WebDriver launchBrowser(String browserType) {
 		// WebDriver driver = null;
 		try {
@@ -91,26 +94,31 @@ public class CommonBusinessFunction extends TestRunner {
 	}
 
 	// Login to application
-	public void loginTOApplication(String loginType) {
+	public void loginTOApplication() throws CustomExceptions {
+
 		DataTable datatable = new DataTable();
+
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
-		if (loginType.equalsIgnoreCase("NH")) {
-			try {
-				loginPage.uName.sendKeys(datatable.getValue("nhUser"));
-				loginPage.psw.sendKeys(datatable.getValue("nhPsw"));
-				loginPage.loginBtn.click();
-				logger.log(LogStatus.PASS, "NH user login is successful.");
+		loginPage.uName.sendKeys(datatable.getValue("nhUser"));
+		loginPage.psw.sendKeys(datatable.getValue("nhPsw"));
+		loginPage.loginBtn.click();
+		// boolean set = loginPage.invalidUserAlertBox.isDisplayed();
 
-			} catch (Exception e) {
-				logger.log(LogStatus.FAIL, "NH user login has failed.");
-				logger.log(LogStatus.ERROR, "NH user login failed.", e);
-				e.printStackTrace();
-			}
-
+		int size = driver.findElements(By.id("alertboxmessage")).size();
+		if (size == 0)
+			logger.log(LogStatus.PASS, "NH user login is successful.");
+		else {
+			logger.log(LogStatus.FAIL, "Invalid User name or password -->NH user login has failed.");
+			/*
+			 * logger.log(LogStatus.FAIL,
+			 * "Invalid User name or password -->NH user login has failed.",
+			 * logger.addScreenCapture(UtilityMethods.TakeSnapshot("loginPage")));
+			 */
+			throw new CustomExceptions("Invalid user /password entered");
 		}
-
 	}
 
+	// Shadow user login
 	public boolean shadowuserLogin() throws InterruptedException {
 		DataTable datatable = new DataTable();
 		GtnexusNHHomePage gtnHomePage = PageFactory.initElements(driver, GtnexusNHHomePage.class);
@@ -137,21 +145,20 @@ public class CommonBusinessFunction extends TestRunner {
 			}
 
 		} catch (Exception e) {
-			
+
 		}
 
 		Thread.sleep(10000);
 		if (shipperUser.homeLink.isDisplayed())
 
 		{
-			// System.out.println("Successfully landed on Shipper user (" +
-			// datatable.getValue("shadowUser") + ") page");
 			logger.log(LogStatus.PASS, "Shadow user login is successful");
 		}
 		logger.log(LogStatus.INFO, "Shadow logi user: " + datatable.getValue("shadowUser"));
 		return true;
 	}
 
+	// Switch to GTN application from TCX
 	public boolean switchToGTNXAppFromTCX() {
 		TCXHomePage homePage = PageFactory.initElements(driver, TCXHomePage.class);
 		try {
@@ -163,7 +170,6 @@ public class CommonBusinessFunction extends TestRunner {
 		}
 		homePage.switchTOGTNXNH.click();
 		if (!(driver.getTitle().equals("Welcome"))) {
-			System.out.println("Unable to ");
 			return false;
 		}
 		System.out.println("Switched to GTNX NH Successfully!");
@@ -171,6 +177,7 @@ public class CommonBusinessFunction extends TestRunner {
 		return true;
 	}
 
+	// Unified Order creation through integration
 	public String createUO(String filePath) {
 		String orderNumber = null;
 		try {
@@ -188,7 +195,6 @@ public class CommonBusinessFunction extends TestRunner {
 			sel.selectByIndex(1);
 			sel = new Select(homePage.fileFormat);
 			sel.selectByVisibleText("Inbound Po");
-
 			homePage.file.sendKeys(filePath);
 			homePage.importBtn.click();
 			Thread.sleep(5000);
@@ -196,24 +202,47 @@ public class CommonBusinessFunction extends TestRunner {
 			alt.dismiss();
 			homePage.messageUID.click();
 			Thread.sleep(5000);
-			if (!(homePage.boUID.getText().equals(""))) {
-				orderNumber = homePage.orderNumber.getText();
+			while (homePage.boUID.getText().equals("")) {
+				driver.navigate().refresh();
 			}
+			orderNumber = homePage.orderNumber.getText();
+			logger.log(LogStatus.PASS, "Unified Order Created successfully.");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		logger.log(LogStatus.INFO, "UO Number: " + orderNumber);
 		return orderNumber;
 
 	}
 
-	public void searchForTOInFlexView(String orderNumber) throws InterruptedException {
+	// Search for Transport order in Flexview
+	public void searchForTOInFlexView(String orderNumber) throws InterruptedException, CustomExceptions {
 		ShipperUserHomePage shipperUser = PageFactory.initElements(driver, ShipperUserHomePage.class);
+		TOFlexview TOFlexview = PageFactory.initElements(driver, TOFlexview.class);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		// wait.until(ExpectedConditions.visibilityOf(shipperUser.application));
 		wait.until(ExpectedConditions.elementToBeClickable(shipperUser.application));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(2000);
 		shipperUser.application.click();
 		shipperUser.transportOrder.click();
+		wait.until(ExpectedConditions.visibilityOf(TOFlexview.orderNumber));
+		TOFlexview.orderNumber.sendKeys(orderNumber);
+		TOFlexview.apply.click();
+		wait.until(ExpectedConditions.invisibilityOfElementWithText(By.xpath(""), "Searching..."));
+		wait.until(ExpectedConditions.invisibilityOfAllElements(TOFlexview.searching));
+		int nosOfTOs = TOFlexview.transportOrders.size();
+		if (nosOfTOs > 0) {
+			StringBuilder sb = new StringBuilder();
+			logger.log(LogStatus.PASS, "Transport Order Created Successfully.");
+			Iterator<WebElement> itr = TOFlexview.transportOrders.iterator();
+			while(itr.hasNext()) {
+				sb.append(itr.next().getText()+", ");
+			}
+			logger.log(LogStatus.INFO, "Created Transport order ID/s: "+sb.toString().trim());
+		}
+		else {
+			logger.log(LogStatus.FAIL, "Transport Order has not created from RTS, Please check your data");
+			throw new CustomExceptions("Transport Order has not created from RTS, Please check your data");
+		}
 	}
 }
