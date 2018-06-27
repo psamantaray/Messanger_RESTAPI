@@ -39,14 +39,14 @@ public class TestRunner {
 	
 	
 	@Test(enabled=false)
-	@Parameters({"browser","appUrl"})
-	public void UO_RTS_TOCreationFlow(String browser, String appUrl) throws InterruptedException, CustomExceptions{
+	@Parameters({"browser","appUrl","UOfilePath"})
+	public void UO_RTS_TOCreationFlow(String browser, String appUrl, String UOfilePath) throws InterruptedException, CustomExceptions{
 		
 		commBusinessFun = new CommonBusinessFunction();
 		commBusinessFun.launchBrowser(browser);
 		commBusinessFun.launchApplication(appUrl);
 		commBusinessFun.loginTOApplication();
-		String orderNumber = commBusinessFun.createUO("C:\\Users\\psamantaray\\Documents\\My Received Files\\Pfizer_FTE_UO.xml");
+		String orderNumber = commBusinessFun.createUO(UOfilePath);
 		System.out.println("Order Number: "+orderNumber);
 		
 		//Switch to GTNX Application
@@ -57,14 +57,14 @@ public class TestRunner {
 	}
 	
 	@Test
-	@Parameters({"browser","appUrl"})
-	public void IndependentRTSCreation(String browser, String appUrl) throws InterruptedException, CustomExceptions{
+	@Parameters({"browser","appUrl","RTSfilePath"})
+	public void IndependentRTSCreation(String browser, String appUrl, String RTSfilePath) throws InterruptedException, CustomExceptions{
 		
 		commBusinessFun = new CommonBusinessFunction();
 		commBusinessFun.launchBrowser(browser);
 		commBusinessFun.launchApplication(appUrl);
 		commBusinessFun.loginTOApplication();
-		String rtsNumber = commBusinessFun.createIndependentRTS("C:\\Users\\psamantaray\\Desktop\\Remve UO&PO dependency on TO_18.5\\RTSInbound01.xml");
+		String rtsNumber = commBusinessFun.createIndependentRTS(System.getProperty("user.dir")+RTSfilePath);
 		System.out.println("RTS Number: "+rtsNumber);
 		
 		//Switch to GTNX Application

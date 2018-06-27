@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="161348" started-at="2018-06-27T09:21:27Z" finished-at="2018-06-27T09:24:08Z">
+  <suite name="Suite" duration-ms="118115" started-at="2018-06-27T12:19:06Z" finished-at="2018-06-27T12:21:04Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="161348" started-at="2018-06-27T09:21:27Z" finished-at="2018-06-27T09:24:08Z">
+    <test name="Test" duration-ms="118115" started-at="2018-06-27T12:19:06Z" finished-at="2018-06-27T12:21:04Z">
       <class name="com.tms.transportPlanning.TestRunner">
-        <test-method status="PASS" signature="reporting()[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="reporting" is-config="true" duration-ms="131" started-at="2018-06-27T14:51:27Z" finished-at="2018-06-27T14:51:27Z">
+        <test-method status="PASS" signature="reporting()[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="reporting" is-config="true" duration-ms="124" started-at="2018-06-27T17:49:06Z" finished-at="2018-06-27T17:49:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reporting -->
-        <test-method status="FAIL" signature="IndependentRTSCreation(java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="IndependentRTSCreation" duration-ms="30478" started-at="2018-06-27T14:51:27Z" finished-at="2018-06-27T14:51:57Z">
+        <test-method status="PASS" signature="IndependentRTSCreation(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="IndependentRTSCreation" duration-ms="117232" started-at="2018-06-27T17:49:06Z" finished-at="2018-06-27T17:51:04Z">
           <params>
             <param index="0">
               <value>
@@ -23,62 +23,16 @@
                 <![CDATA[https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info]]>
               </value>
             </param>
+            <param index="2">
+              <value>
+                <![CDATA[\xmlFiles\RTSInbound01.xml]]>
+              </value>
+            </param>
           </params>
-          <exception class="com.keywords.CustomExceptions">
-            <message>
-              <![CDATA[RTS Creation failed  due to error in the file content]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.keywords.CustomExceptions: RTS Creation failed  due to error in the file content
-	at com.businessDefination.CommonBusinessFunction.createIndependentRTS(CommonBusinessFunction.java:257)
-	at com.tms.transportPlanning.TestRunner.IndependentRTSCreation(TestRunner.java:67)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.keywords.CustomExceptions -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- IndependentRTSCreation -->
-        <test-method status="PASS" signature="UO_RTS_TOCreationFlow(java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="UO_RTS_TOCreationFlow" duration-ms="130204" started-at="2018-06-27T14:51:58Z" finished-at="2018-06-27T14:54:08Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- UO_RTS_TOCreationFlow -->
-        <test-method status="PASS" signature="afterExecution()[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="afterExecution" is-config="true" duration-ms="222" started-at="2018-06-27T14:54:08Z" finished-at="2018-06-27T14:54:08Z">
+        <test-method status="PASS" signature="afterExecution()[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="afterExecution" is-config="true" duration-ms="749" started-at="2018-06-27T17:51:04Z" finished-at="2018-06-27T17:51:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterExecution -->

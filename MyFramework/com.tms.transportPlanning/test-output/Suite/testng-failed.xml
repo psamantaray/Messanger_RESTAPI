@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
+  <parameter name="RTSfilePath" value="\xmlFiles\RTSInbound01.xml"/>
   <parameter name="browser" value="Chrome"/>
   <parameter name="appUrl" value="https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info"/>
+  <parameter name="UOfilePath" value="C:\Users\psamantaray\Documents\My Received Files\Pfizer_FTE_UO.xmls"/>
   <test name="Test(failed)">
+    <parameter name="RTSfilePath" value="\xmlFiles\RTSInbound01.xml"/>
     <parameter name="browser" value="Chrome"/>
     <parameter name="appUrl" value="https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info"/>
+    <parameter name="UOfilePath" value="C:\Users\psamantaray\Documents\My Received Files\Pfizer_FTE_UO.xmls"/>
     <classes>
       <class name="com.tms.transportPlanning.TestRunner">
         <methods>
