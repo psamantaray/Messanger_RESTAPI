@@ -112,7 +112,8 @@ public class CommonBusinessFunction extends TestRunner {
 			/*
 			 * logger.log(LogStatus.FAIL,
 			 * "Invalid User name or password -->NH user login has failed.",
-			 * logger.addScreenCapture(UtilityMethods.TakeSnapshot("loginPage")));
+			 * logger.addScreenCapture(UtilityMethods.TakeSnapshot("loginPage"))
+			 * );
 			 */
 			throw new CustomExceptions("Invalid user /password entered");
 		}
@@ -148,10 +149,9 @@ public class CommonBusinessFunction extends TestRunner {
 
 		}
 
-		Thread.sleep(10000);
-		if (shipperUser.homeLink.isDisplayed())
+		// Thread.sleep(6000);
 
-		{
+		if (shipperUser.tabBar.isDisplayed()) {
 			logger.log(LogStatus.PASS, "Shadow user login is successful");
 		}
 		logger.log(LogStatus.INFO, "Shadow logi user: " + datatable.getValue("shadowUser"));
@@ -178,15 +178,15 @@ public class CommonBusinessFunction extends TestRunner {
 	}
 
 	// Unified Order creation through integration
-	public String createUO(String filePath) {
+	public String createUO(String filePath) throws CustomExceptions {
+		TCXHomePage homePage = PageFactory.initElements(driver, TCXHomePage.class);
 		String orderNumber = null;
 		try {
-			TCXHomePage homePage = PageFactory.initElements(driver, TCXHomePage.class);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			homePage.messaging.click();
 			homePage.utility.click();
 			homePage.importAction.click();
-			homePage.MessageOrg.sendKeys("Synergy Test Customer");
+			homePage.MessageOrg.sendKeys("pfizer");
 			List<WebElement> allResults = driver.findElements(By.xpath("//div[@class='tt-menu tt-open']/div/div"));
 			allResults.get(0).click();
 			Select sel = new Select(homePage.documentType);
@@ -194,7 +194,7 @@ public class CommonBusinessFunction extends TestRunner {
 			sel = new Select(homePage.AgentuserID);
 			sel.selectByIndex(1);
 			sel = new Select(homePage.fileFormat);
-			sel.selectByVisibleText("Inbound Po");
+			sel.selectByVisibleText("TradeCard XML v3.10");
 			homePage.file.sendKeys(filePath);
 			homePage.importBtn.click();
 			Thread.sleep(5000);
@@ -202,21 +202,70 @@ public class CommonBusinessFunction extends TestRunner {
 			alt.dismiss();
 			homePage.messageUID.click();
 			Thread.sleep(5000);
-			while (homePage.boUID.getText().equals("")) {
+			while (homePage.boUID.getText().equals("") && !(homePage.state.getText().equals("Failed"))) {
 				driver.navigate().refresh();
 			}
-			orderNumber = homePage.orderNumber.getText();
-			logger.log(LogStatus.PASS, "Unified Order Created successfully.");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		if (homePage.state.getText().equals("Failed")) {
+			logger.log(LogStatus.FAIL, "Error occures on File processing: " + homePage.notes.getText());
+			throw new CustomExceptions("UO Creation failed  due to error in the file content");
+		}
+
+		orderNumber = homePage.orderNumber.getText();
+		logger.log(LogStatus.PASS, "Unified Order Created successfully.");
+
 		logger.log(LogStatus.INFO, "UO Number: " + orderNumber);
 		return orderNumber;
 
 	}
 
-	// Search for Transport order in Flexview
-	public void searchForTOInFlexView(String orderNumber) throws InterruptedException, CustomExceptions {
+	public String createIndependentRTS(String filePath) throws CustomExceptions {
+		String rtsNumber = null;
+		TCXHomePage homePage = PageFactory.initElements(driver, TCXHomePage.class);
+		try {
+
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			homePage.messaging.click();
+			homePage.utility.click();
+			homePage.importAction.click();
+			homePage.MessageOrg.sendKeys("pfizer");
+			List<WebElement> allResults = driver.findElements(By.xpath("//div[@class='tt-menu tt-open']/div/div"));
+			allResults.get(0).click();
+			Select sel = new Select(homePage.documentType);
+			sel.selectByVisibleText("ReadyToShipOrder");
+			sel = new Select(homePage.AgentuserID);
+			sel.selectByIndex(1);
+			sel = new Select(homePage.fileFormat);
+			sel.selectByIndex(1);
+			homePage.file.sendKeys(filePath);
+			homePage.importBtn.click();
+			Thread.sleep(5000);
+			Alert alt = driver.switchTo().alert();
+			alt.dismiss();
+			homePage.messageUID.click();
+			Thread.sleep(5000);
+			while (homePage.boUID.getText().equals("") && !(homePage.state.getText().equals("Failed"))) {
+				driver.navigate().refresh();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (homePage.state.getText().equals("Failed")) {
+			logger.log(LogStatus.FAIL, "Error occures on File processing: " + homePage.notes.getText());
+			throw new CustomExceptions("RTS Creation failed  due to error in the file content");
+		}
+		rtsNumber = homePage.rtsNumber.getText();
+		logger.log(LogStatus.PASS, "Ready TO Ship Order Created successfully.");
+
+		logger.log(LogStatus.INFO, "RTS Number: " + rtsNumber);
+		return rtsNumber;
+	}
+
+	// Search for Transport order in Flexview using order number
+	public void searchForTOInFlexViewUsingOrderNumber(String orderNumber)
+			throws InterruptedException, CustomExceptions {
 		ShipperUserHomePage shipperUser = PageFactory.initElements(driver, ShipperUserHomePage.class);
 		TOFlexview TOFlexview = PageFactory.initElements(driver, TOFlexview.class);
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -235,14 +284,47 @@ public class CommonBusinessFunction extends TestRunner {
 			StringBuilder sb = new StringBuilder();
 			logger.log(LogStatus.PASS, "Transport Order Created Successfully.");
 			Iterator<WebElement> itr = TOFlexview.transportOrders.iterator();
-			while(itr.hasNext()) {
-				sb.append(itr.next().getText()+", ");
+			while (itr.hasNext()) {
+				sb.append(itr.next().getText() + ", ");
 			}
-			logger.log(LogStatus.INFO, "Created Transport order ID/s: "+sb.toString().trim());
-		}
-		else {
+			logger.log(LogStatus.INFO, "Created Transport order ID/s: " + sb.toString().trim());
+		} else {
 			logger.log(LogStatus.FAIL, "Transport Order has not created from RTS, Please check your data");
 			throw new CustomExceptions("Transport Order has not created from RTS, Please check your data");
 		}
+		TOFlexview.transportOrders.get(0).click();
+		logger.log(LogStatus.PASS, "Successfully Landded on Transport order Details page");
+	}
+
+	// Search for Transport order in Flexview using RTS Number
+	public void searchForTOInFlexViewUsingRTSNumber(String rtsNumber) throws InterruptedException, CustomExceptions {
+		ShipperUserHomePage shipperUser = PageFactory.initElements(driver, ShipperUserHomePage.class);
+		TOFlexview TOFlexview = PageFactory.initElements(driver, TOFlexview.class);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(shipperUser.application));
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(2000);
+		shipperUser.application.click();
+		shipperUser.transportOrder.click();
+		wait.until(ExpectedConditions.visibilityOf(TOFlexview.orderNumber));
+		TOFlexview.RTSNumber.sendKeys(rtsNumber);
+		TOFlexview.apply.click();
+		wait.until(ExpectedConditions.invisibilityOfElementWithText(By.xpath(""), "Searching..."));
+		wait.until(ExpectedConditions.invisibilityOfAllElements(TOFlexview.searching));
+		int nosOfTOs = TOFlexview.transportOrders.size();
+		if (nosOfTOs > 0) {
+			StringBuilder sb = new StringBuilder();
+			logger.log(LogStatus.PASS, "Transport Order Created Successfully.");
+			Iterator<WebElement> itr = TOFlexview.transportOrders.iterator();
+			while (itr.hasNext()) {
+				sb.append(itr.next().getText() + ", ");
+			}
+			logger.log(LogStatus.INFO, "Created Transport order ID/s: " + sb.toString().trim());
+		} else {
+			logger.log(LogStatus.FAIL, "Transport Order has not created from RTS, Please check your data");
+			throw new CustomExceptions("Transport Order has not created from RTS, Please check your data");
+		}
+		TOFlexview.transportOrders.get(0).click();
+		logger.log(LogStatus.PASS, "Successfully Landded on Transport order Details page");
 	}
 }

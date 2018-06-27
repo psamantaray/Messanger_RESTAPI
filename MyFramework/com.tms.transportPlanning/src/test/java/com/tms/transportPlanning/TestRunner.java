@@ -5,7 +5,6 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -39,29 +38,49 @@ public class TestRunner {
 	}
 	
 	
-	@Test
+	@Test(enabled=false)
 	@Parameters({"browser","appUrl"})
-	public void Executer(String browser, String appUrl) throws InterruptedException, CustomExceptions{
+	public void UO_RTS_TOCreationFlow(String browser, String appUrl) throws InterruptedException, CustomExceptions{
 		
 		commBusinessFun = new CommonBusinessFunction();
 		commBusinessFun.launchBrowser(browser);
 		commBusinessFun.launchApplication(appUrl);
 		commBusinessFun.loginTOApplication();
-		String orderNumber = commBusinessFun.createUO("C:\\Users\\sony\\Desktop\\10865_UO.XML");
+		String orderNumber = commBusinessFun.createUO("C:\\Users\\psamantaray\\Documents\\My Received Files\\Pfizer_FTE_UO.xml");
 		System.out.println("Order Number: "+orderNumber);
 		
 		//Switch to GTNX Application
 		commBusinessFun.switchToGTNXAppFromTCX();
 		commBusinessFun.shadowuserLogin();
-		commBusinessFun.searchForTOInFlexView(orderNumber);
+		commBusinessFun.searchForTOInFlexViewUsingOrderNumber(orderNumber);
+		
+	}
+	
+	@Test
+	@Parameters({"browser","appUrl"})
+	public void IndependentRTSCreation(String browser, String appUrl) throws InterruptedException, CustomExceptions{
+		
+		commBusinessFun = new CommonBusinessFunction();
+		commBusinessFun.launchBrowser(browser);
+		commBusinessFun.launchApplication(appUrl);
+		commBusinessFun.loginTOApplication();
+		String rtsNumber = commBusinessFun.createIndependentRTS("C:\\Users\\psamantaray\\Desktop\\Remve UO&PO dependency on TO_18.5\\RTSInbound01.xml");
+		System.out.println("RTS Number: "+rtsNumber);
+		
+		//Switch to GTNX Application
+		commBusinessFun.switchToGTNXAppFromTCX();
+		commBusinessFun.shadowuserLogin();
+		commBusinessFun.searchForTOInFlexViewUsingRTSNumber(rtsNumber);
 		
 	}
 	@AfterTest
-	public void afterExecution() {
+	public void afterExecution() throws InterruptedException {
 		reports.endTest(logger);
 		reports.flush();
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
 		String path = System.getProperty("user.dir")+"/test-output/STMExtentReport.html";
+		System.out.println("Find the report in "+path);
+		//Thread.sleep(5000);
 		//driver.get(path);
 	}
 	

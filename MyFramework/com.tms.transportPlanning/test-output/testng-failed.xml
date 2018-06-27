@@ -2,15 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
   <parameter name="browser" value="Chrome"/>
-  <parameter name="appUrl" value="https://network-supportp.qa.gtnexus.com"/>
+  <parameter name="appUrl" value="https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info"/>
   <test name="Test(failed)">
     <parameter name="browser" value="Chrome"/>
-    <parameter name="appUrl" value="https://network-supportp.qa.gtnexus.com"/>
+    <parameter name="appUrl" value="https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info"/>
     <classes>
       <class name="com.tms.transportPlanning.TestRunner">
         <methods>
+          <include name="IndependentRTSCreation" invocation-numbers="0"/>
           <include name="reporting"/>
-          <include name="Executer" invocation-numbers="0"/>
           <include name="afterExecution"/>
         </methods>
       </class> <!-- com.tms.transportPlanning.TestRunner -->

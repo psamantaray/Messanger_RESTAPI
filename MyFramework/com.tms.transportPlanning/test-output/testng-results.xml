@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="231253" started-at="2018-06-26T17:47:33Z" finished-at="2018-06-26T17:51:24Z">
+  <suite name="Suite" duration-ms="161348" started-at="2018-06-27T09:21:27Z" finished-at="2018-06-27T09:24:08Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="231253" started-at="2018-06-26T17:47:33Z" finished-at="2018-06-26T17:51:24Z">
+    <test name="Test" duration-ms="161348" started-at="2018-06-27T09:21:27Z" finished-at="2018-06-27T09:24:08Z">
       <class name="com.tms.transportPlanning.TestRunner">
-        <test-method status="PASS" signature="reporting()[pri:0, instance:com.tms.transportPlanning.TestRunner@8bd1b6a]" name="reporting" is-config="true" duration-ms="1307" started-at="2018-06-26T23:17:33Z" finished-at="2018-06-26T23:17:34Z">
+        <test-method status="PASS" signature="reporting()[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="reporting" is-config="true" duration-ms="131" started-at="2018-06-27T14:51:27Z" finished-at="2018-06-27T14:51:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reporting -->
-        <test-method status="FAIL" signature="Executer(java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@8bd1b6a]" name="Executer" duration-ms="226204" started-at="2018-06-26T23:17:34Z" finished-at="2018-06-26T23:21:20Z">
+        <test-method status="FAIL" signature="IndependentRTSCreation(java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="IndependentRTSCreation" duration-ms="30478" started-at="2018-06-27T14:51:27Z" finished-at="2018-06-27T14:51:57Z">
           <params>
             <param index="0">
               <value>
@@ -20,18 +20,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[https://network-supportp.qa.gtnexus.com]]>
+                <![CDATA[https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info]]>
               </value>
             </param>
           </params>
           <exception class="com.keywords.CustomExceptions">
             <message>
-              <![CDATA[Transport Order has not created from RTS, Please check your data]]>
+              <![CDATA[RTS Creation failed  due to error in the file content]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.keywords.CustomExceptions: Transport Order has not created from RTS, Please check your data
-	at com.businessDefination.CommonBusinessFunction.searchForTOInFlexView(CommonBusinessFunction.java:245)
-	at com.tms.transportPlanning.TestRunner.Executer(TestRunner.java:56)
+              <![CDATA[com.keywords.CustomExceptions: RTS Creation failed  due to error in the file content
+	at com.businessDefination.CommonBusinessFunction.createIndependentRTS(CommonBusinessFunction.java:257)
+	at com.tms.transportPlanning.TestRunner.IndependentRTSCreation(TestRunner.java:67)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -61,8 +61,24 @@
           </exception> <!-- com.keywords.CustomExceptions -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Executer -->
-        <test-method status="PASS" signature="afterExecution()[pri:0, instance:com.tms.transportPlanning.TestRunner@8bd1b6a]" name="afterExecution" is-config="true" duration-ms="1612" started-at="2018-06-26T23:21:22Z" finished-at="2018-06-26T23:21:24Z">
+        </test-method> <!-- IndependentRTSCreation -->
+        <test-method status="PASS" signature="UO_RTS_TOCreationFlow(java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="UO_RTS_TOCreationFlow" duration-ms="130204" started-at="2018-06-27T14:51:58Z" finished-at="2018-06-27T14:54:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UO_RTS_TOCreationFlow -->
+        <test-method status="PASS" signature="afterExecution()[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="afterExecution" is-config="true" duration-ms="222" started-at="2018-06-27T14:54:08Z" finished-at="2018-06-27T14:54:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterExecution -->

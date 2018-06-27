@@ -18,4 +18,7 @@ public class ShipperUserHomePage {
 	@FindBy (id = "navmenu__planning")
 	public WebElement transportPlanning;
 	
+	@FindBy(id = "gtn-navbar")
+	public WebElement tabBar;
+	
 }

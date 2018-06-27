@@ -10,6 +10,9 @@ public class TOFlexview {
 		@FindBy(xpath = "//div[@class='sohoxi']/span/div[2]/div[2]/div/div/div/div/div[2]/div[2]/span/span[2]/span/span/input")
 		public WebElement orderNumber;
 		
+		@FindBy(xpath = "//div[@class='filterset']/div[13]/span/span[2]/span/span/input")
+		public WebElement RTSNumber;
+		
 		@FindBy(xpath="//button[@title='Apply']")
 		public WebElement apply;
 		
@@ -18,5 +21,8 @@ public class TOFlexview {
 		
 		@FindBy(xpath="//td[contains(text(),'Searching')]")
 		public List<WebElement> searching;
+		
+		
+		
 }
 

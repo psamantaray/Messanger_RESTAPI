@@ -51,5 +51,15 @@ public class TCXHomePage {
 	@FindBy(id="navmenu__switch to gtn nh")
 	public WebElement switchTOGTNXNH;
 	
+	@FindBy(xpath="//form[@name='tradecardForm']/table[9]/tbody/tr/td[2]/table/tbody/tr[5]/td[2]/span")
+	public WebElement rtsNumber;
+	
+	@FindBy(xpath="//form[@name='tradecardForm']/table[3]/tbody/tr/td[2]/table/tbody/tr[13]/td[2]/span")
+	public WebElement state;
+	
+	@FindBy(xpath="//form[@name='tradecardForm']/table[5]/tbody/tr[1]/td[2]/table/tbody/tr[4]/td[3]/textarea")
+	public WebElement notes;
+	
+	
 	
 }

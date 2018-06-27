@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jun 26 23:17:33 IST 2018</td>
+<td>Started on:</td><td>Wed Jun 27 14:51:27 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>231 seconds (231253 ms)</td>
+<tr><td>Total time:</td><td>161 seconds (161348 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,14 +75,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.tms.transportPlanning.TestRunner.Executer()'><b>Executer</b><br>Test class: com.tms.transportPlanning.TestRunner<br>Parameters: Chrome, https://network-supportp.qa.gtnexus.com</td>
-<td><div><pre>com.keywords.CustomExceptions: Transport Order has not created from RTS, Please check your data
-	at com.businessDefination.CommonBusinessFunction.searchForTOInFlexView(CommonBusinessFunction.java:245)
-	at com.tms.transportPlanning.TestRunner.Executer(TestRunner.java:56)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace616674002", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace616674002'><pre>com.keywords.CustomExceptions: Transport Order has not created from RTS, Please check your data
-	at com.businessDefination.CommonBusinessFunction.searchForTOInFlexView(CommonBusinessFunction.java:245)
-	at com.tms.transportPlanning.TestRunner.Executer(TestRunner.java:56)
+<td title='com.tms.transportPlanning.TestRunner.IndependentRTSCreation()'><b>IndependentRTSCreation</b><br>Test class: com.tms.transportPlanning.TestRunner<br>Parameters: Chrome, https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info</td>
+<td><div><pre>com.keywords.CustomExceptions: RTS Creation failed  due to error in the file content
+	at com.businessDefination.CommonBusinessFunction.createIndependentRTS(CommonBusinessFunction.java:257)
+	at com.tms.transportPlanning.TestRunner.IndependentRTSCreation(TestRunner.java:67)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace136393487", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace136393487'><pre>com.keywords.CustomExceptions: RTS Creation failed  due to error in the file content
+	at com.businessDefination.CommonBusinessFunction.createIndependentRTS(CommonBusinessFunction.java:257)
+	at com.tms.transportPlanning.TestRunner.IndependentRTSCreation(TestRunner.java:67)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -108,8 +108,21 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>226</td>
-<td>com.tms.transportPlanning.TestRunner@8bd1b6a</td></tr>
+<td>30</td>
+<td>com.tms.transportPlanning.TestRunner@5c7fa833</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.tms.transportPlanning.TestRunner.UO_RTS_TOCreationFlow()'><b>UO_RTS_TOCreationFlow</b><br>Test class: com.tms.transportPlanning.TestRunner<br>Parameters: Chrome, https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info</td>
+<td></td>
+<td>130</td>
+<td>com.tms.transportPlanning.TestRunner@5c7fa833</td></tr>
 </table><p>
 </body>
 </html>
