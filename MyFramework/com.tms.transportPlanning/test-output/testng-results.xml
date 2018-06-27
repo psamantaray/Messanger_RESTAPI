@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="118115" started-at="2018-06-27T12:19:06Z" finished-at="2018-06-27T12:21:04Z">
+  <suite name="Suite" duration-ms="245567" started-at="2018-06-27T17:59:35Z" finished-at="2018-06-27T18:03:41Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="118115" started-at="2018-06-27T12:19:06Z" finished-at="2018-06-27T12:21:04Z">
+    <test name="Test" duration-ms="245567" started-at="2018-06-27T17:59:35Z" finished-at="2018-06-27T18:03:41Z">
       <class name="com.tms.transportPlanning.TestRunner">
-        <test-method status="PASS" signature="reporting()[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="reporting" is-config="true" duration-ms="124" started-at="2018-06-27T17:49:06Z" finished-at="2018-06-27T17:49:06Z">
+        <test-method status="PASS" signature="reporting()[pri:0, instance:com.tms.transportPlanning.TestRunner@8bd1b6a]" name="reporting" is-config="true" duration-ms="607" started-at="2018-06-27T23:29:35Z" finished-at="2018-06-27T23:29:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reporting -->
-        <test-method status="PASS" signature="IndependentRTSCreation(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="IndependentRTSCreation" duration-ms="117232" started-at="2018-06-27T17:49:06Z" finished-at="2018-06-27T17:51:04Z">
+        <test-method status="PASS" signature="UO_RTS_TOCreationFlow(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.tms.transportPlanning.TestRunner@8bd1b6a]" name="UO_RTS_TOCreationFlow" duration-ms="244425" started-at="2018-06-27T23:29:36Z" finished-at="2018-06-27T23:33:40Z">
           <params>
             <param index="0">
               <value>
@@ -25,14 +25,14 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[\xmlFiles\RTSInbound01.xml]]>
+                <![CDATA[\xmlFiles\Pfizer_FTE_UO.xml]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- IndependentRTSCreation -->
-        <test-method status="PASS" signature="afterExecution()[pri:0, instance:com.tms.transportPlanning.TestRunner@5c7fa833]" name="afterExecution" is-config="true" duration-ms="749" started-at="2018-06-27T17:51:04Z" finished-at="2018-06-27T17:51:04Z">
+        </test-method> <!-- UO_RTS_TOCreationFlow -->
+        <test-method status="PASS" signature="afterExecution()[pri:0, instance:com.tms.transportPlanning.TestRunner@8bd1b6a]" name="afterExecution" is-config="true" duration-ms="513" started-at="2018-06-27T23:33:40Z" finished-at="2018-06-27T23:33:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterExecution -->

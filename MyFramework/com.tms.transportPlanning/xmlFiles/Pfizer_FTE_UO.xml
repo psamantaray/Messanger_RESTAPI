@@ -15,7 +15,7 @@
 			<eventDateTime>2018-01-01T19:49:02Z</eventDateTime>
 		</subscriptionEvent>
 		<redirectUrl>http://localhost:8080/en/trade/PurchaseOrder?key=121112770</redirectUrl>
-		<poNumber>FEF_TO_TP_UOMS027</poNumber>
+		<poNumber>FEF_TO_TP_UOMS033</poNumber>
 		<orderUid>121112741</orderUid>
 		<orderClassType />
 		<orderStatusCode>Draft</orderStatusCode>

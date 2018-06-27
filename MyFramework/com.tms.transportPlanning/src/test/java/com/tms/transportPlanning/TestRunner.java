@@ -38,7 +38,7 @@ public class TestRunner {
 	}
 	
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	@Parameters({"browser","appUrl","UOfilePath"})
 	public void UO_RTS_TOCreationFlow(String browser, String appUrl, String UOfilePath) throws InterruptedException, CustomExceptions{
 		
@@ -46,17 +46,18 @@ public class TestRunner {
 		commBusinessFun.launchBrowser(browser);
 		commBusinessFun.launchApplication(appUrl);
 		commBusinessFun.loginTOApplication();
-		String orderNumber = commBusinessFun.createUO(UOfilePath);
+		String orderNumber = commBusinessFun.createUO(System.getProperty("user.dir")+UOfilePath);
 		System.out.println("Order Number: "+orderNumber);
 		
 		//Switch to GTNX Application
 		commBusinessFun.switchToGTNXAppFromTCX();
 		commBusinessFun.shadowuserLogin();
 		commBusinessFun.searchForTOInFlexViewUsingOrderNumber(orderNumber);
+		commBusinessFun.FEFTOItemsTabValidation();
 		
 	}
 	
-	@Test
+	@Test(enabled=false)
 	@Parameters({"browser","appUrl","RTSfilePath"})
 	public void IndependentRTSCreation(String browser, String appUrl, String RTSfilePath) throws InterruptedException, CustomExceptions{
 		
@@ -71,7 +72,7 @@ public class TestRunner {
 		commBusinessFun.switchToGTNXAppFromTCX();
 		commBusinessFun.shadowuserLogin();
 		commBusinessFun.searchForTOInFlexViewUsingRTSNumber(rtsNumber);
-		
+		commBusinessFun.FEFTOItemsTabValidation();
 	}
 	@AfterTest
 	public void afterExecution() throws InterruptedException {

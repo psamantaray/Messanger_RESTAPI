@@ -15,12 +15,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.Assertion;
 
 import com.keywords.CustomExceptions;
 import com.pageObject.GtnexusNHHomePage;
 import com.pageObject.LoginPage;
 import com.pageObject.ShipperUserHomePage;
 import com.pageObject.TCXHomePage;
+import com.pageObject.TODetailsPage;
 import com.pageObject.TOFlexview;
 import com.relevantcodes.extentreports.LogStatus;
 import com.tms.transportPlanning.TestRunner;
@@ -327,4 +329,43 @@ public class CommonBusinessFunction extends TestRunner {
 		TOFlexview.transportOrders.get(0).click();
 		logger.log(LogStatus.PASS, "Successfully Landded on Transport order Details page");
 	}
+	//FEF TO Items tab Validation --> Call this method after landed on FEF TO Page
+	public void FEFTOItemsTabValidation() {
+		DataTable dataTable = new DataTable();
+		String actLineItemNum = null;
+		String actProdName = null;
+		String actCommodity = null;
+		String actCommodityClass = null;
+		TODetailsPage toDetailPage = PageFactory.initElements(driver, TODetailsPage.class);
+		//if(driver.getTitle().equals("Transport Order Detail")) {
+			toDetailPage.itemsTab.click();
+			//Master section validation
+			actLineItemNum = toDetailPage.lineItemNum.getText();
+			if(actLineItemNum.equals(dataTable.getValue("lineItemNumber")))
+				logger.log(LogStatus.PASS, "Line Items validation --> Pass");
+			else
+				logger.log(LogStatus.FAIL, "Line Items validation --> FAIL, Expected Value: "+dataTable.getValue("lineItemNumber")+" Actual Value: "+actLineItemNum);
+	
+			actProdName = toDetailPage.productName.getText();
+			if(actProdName.equals(dataTable.getValue("prodName")))
+				logger.log(LogStatus.PASS, "Product Name validation --> Pass");
+			else
+				logger.log(LogStatus.FAIL, "Product Name validation --> FAIL, Expected Value: "+dataTable.getValue("prodName")+" Actual Value: "+actProdName);
+			
+			actCommodity = toDetailPage.commodity.getText();
+			if(actCommodity.equals(dataTable.getValue("commodity")))
+				logger.log(LogStatus.PASS, "commodity validation --> Pass");
+			else
+				logger.log(LogStatus.FAIL, "commodity validation --> FAIL, Expected Value: "+dataTable.getValue("commodity")+" Actual Value: "+actCommodity);
+			
+			actCommodityClass = toDetailPage.commodityClass.getText();
+			if(actCommodityClass.equals(dataTable.getValue("commodityClass")))
+				logger.log(LogStatus.PASS, "commodity Class validation --> Pass");
+			else
+				logger.log(LogStatus.FAIL, "commodity Class validation --> FAIL, Expected Value: "+dataTable.getValue("commodityClass")+" Actual Value: "+actCommodityClass);
+			
+			//Details Validation
+			toDetailPage.expandButton.click();
+		}
+	//}
 }
