@@ -110,14 +110,14 @@ public class CommonBusinessFunction extends TestRunner {
 		if (size == 0)
 			logger.log(LogStatus.PASS, "NH user login is successful.");
 		else {
-			logger.log(LogStatus.FAIL, "Invalid User name or password -->NH user login has failed.");
+			logger.log(LogStatus.FAIL, "Invalid User name or PASSword -->NH user login has failed.");
 			/*
 			 * logger.log(LogStatus.FAIL,
-			 * "Invalid User name or password -->NH user login has failed.",
+			 * "Invalid User name or PASSword -->NH user login has failed.",
 			 * logger.addScreenCapture(UtilityMethods.TakeSnapshot("loginPage"))
 			 * );
 			 */
-			throw new CustomExceptions("Invalid user /password entered");
+			throw new CustomExceptions("Invalid user /PASSword entered");
 		}
 	}
 
@@ -329,43 +329,70 @@ public class CommonBusinessFunction extends TestRunner {
 		TOFlexview.transportOrders.get(0).click();
 		logger.log(LogStatus.PASS, "Successfully Landded on Transport order Details page");
 	}
-	//FEF TO Items tab Validation --> Call this method after landed on FEF TO Page
-	public void FEFTOItemsTabValidation() {
+
+	// FEF TO Items tab Validation --> Call this method after landed on FEF TO
+	// Page
+	public void FEFTOItemsTabValidation() throws InterruptedException {
 		DataTable dataTable = new DataTable();
+		int actLineItemsCount = 0;
 		String actLineItemNum = null;
 		String actProdName = null;
 		String actCommodity = null;
 		String actCommodityClass = null;
+
 		TODetailsPage toDetailPage = PageFactory.initElements(driver, TODetailsPage.class);
-		//if(driver.getTitle().equals("Transport Order Detail")) {
-			toDetailPage.itemsTab.click();
-			//Master section validation
-			actLineItemNum = toDetailPage.lineItemNum.getText();
-			if(actLineItemNum.equals(dataTable.getValue("lineItemNumber")))
-				logger.log(LogStatus.PASS, "Line Items validation --> Pass");
-			else
-				logger.log(LogStatus.FAIL, "Line Items validation --> FAIL, Expected Value: "+dataTable.getValue("lineItemNumber")+" Actual Value: "+actLineItemNum);
-	
-			actProdName = toDetailPage.productName.getText();
-			if(actProdName.equals(dataTable.getValue("prodName")))
-				logger.log(LogStatus.PASS, "Product Name validation --> Pass");
-			else
-				logger.log(LogStatus.FAIL, "Product Name validation --> FAIL, Expected Value: "+dataTable.getValue("prodName")+" Actual Value: "+actProdName);
+		// if(driver.getTitle().equals("Transport Order Detail")) {
+
+		toDetailPage.itemsTab.click();
+		// Master section validation
+
+		actLineItemsCount = toDetailPage.nosOfLineItems.size();
+		logger.log(LogStatus.INFO, "Total No. of Line items: " + actLineItemsCount);
+		/*
+		 * if
+		 * (actLineItemsCount==Integer.parseInt(dataTable.getValue("nosOfLines")
+		 * )){ logger.log(LogStatus.INFO,
+		 * "Total line items count: "+actLineItemsCount);
+		 * logger.log(LogStatus.PASS, "Total line items count --> PASS"); } else
+		 * logger.log(LogStatus.FAIL,
+		 * "Total line items count --> FAIL, Expected Value: " +
+		 * dataTable.getValue("lineItemsCount") + " Actual Value: " +
+		 * actLineItemsCount);
+		 */
+
+		for (int i = 0; i < actLineItemsCount; i++) {
+			logger.log(LogStatus.INFO, "Line# "+ (i+1) +"Master section validation Result: ");
 			
-			actCommodity = toDetailPage.commodity.getText();
-			if(actCommodity.equals(dataTable.getValue("commodity")))
-				logger.log(LogStatus.PASS, "commodity validation --> Pass");
+			if (!(toDetailPage.lineItemNum.get(i).getText().equals("")))
+				logger.log(LogStatus.PASS, "Displayed Line Item Number: "+toDetailPage.lineItemNum.get(i).getText() );
 			else
-				logger.log(LogStatus.FAIL, "commodity validation --> FAIL, Expected Value: "+dataTable.getValue("commodity")+" Actual Value: "+actCommodity);
-			
-			actCommodityClass = toDetailPage.commodityClass.getText();
-			if(actCommodityClass.equals(dataTable.getValue("commodityClass")))
-				logger.log(LogStatus.PASS, "commodity Class validation --> Pass");
+				logger.log(LogStatus.FAIL, "Line Item Number is NULL for Line Number "+ toDetailPage.lineItemNum.get(i).getText());
+
+			if (!(toDetailPage.productName.get(i).getText().equals("")))
+				logger.log(LogStatus.PASS, "Displayed Product Name: "+toDetailPage.productName.get(i).getText());
 			else
-				logger.log(LogStatus.FAIL, "commodity Class validation --> FAIL, Expected Value: "+dataTable.getValue("commodityClass")+" Actual Value: "+actCommodityClass);
-			
-			//Details Validation
-			toDetailPage.expandButton.click();
+				logger.log(LogStatus.FAIL,"Prod Name is NULL for Line Item Number " + toDetailPage.lineItemNum.get(i).getText());
+
+			if (!(toDetailPage.commodity.get(i).getText().equals("")))
+				logger.log(LogStatus.PASS, "Displayed Commodity: "+toDetailPage.commodity.get(i).getText());
+			else
+				logger.log(LogStatus.FAIL, "Commodity is NULL for line item Number "+toDetailPage.lineItemNum.get(i).getText());
+
+			if (!(toDetailPage.commodityClass.get(i).getText().equals("")))
+				logger.log(LogStatus.PASS, "Displayed Commodity Class: "+toDetailPage.commodityClass.get(i).getText() );
+			else
+				logger.log(LogStatus.FAIL, "Commodity Class is NULL for line item Number "+toDetailPage.lineItemNum.get(i).getText());
+
+			// Details Validation
+			toDetailPage.expandButton.get(i).click();
+			Thread.sleep(2000);
+			if (toDetailPage.lineItemDetails.size() > 0)
+				logger.log(LogStatus.PASS, "Line Item Details displayed");
+			else {
+				logger.log(LogStatus.FAIL, "Line item details are not getting displayed on master section expand");
+			}
 		}
-	//}
+		
+	}
+	// }
 }

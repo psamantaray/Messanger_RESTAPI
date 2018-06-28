@@ -79,10 +79,10 @@ public class TestRunner {
 		reports.endTest(logger);
 		reports.flush();
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
-		String path = System.getProperty("user.dir")+"/test-output/STMExtentReport.html";
-		System.out.println("Find the report in "+path);
+		String reportPath = System.getProperty("user.dir")+"/test-output/STMExtentReport.html";
+		System.out.println("Find the report in "+reportPath);
 		//Thread.sleep(5000);
-		//driver.get(path);
+		driver.get(reportPath);
 	}
 	
 }

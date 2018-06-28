@@ -15,7 +15,7 @@
 			<eventDateTime>2018-01-01T19:49:02Z</eventDateTime>
 		</subscriptionEvent>
 		<redirectUrl>http://localhost:8080/en/trade/PurchaseOrder?key=121112770</redirectUrl>
-		<poNumber>FEF_TO_TP_UOMS033</poNumber>
+		<poNumber>FEF_TO_TP_UOMS0460</poNumber>
 		<orderUid>121112741</orderUid>
 		<orderClassType />
 		<orderStatusCode>Draft</orderStatusCode>
@@ -373,7 +373,7 @@
 		<quantityPerInnerPackage>2</quantityPerInnerPackage>
 		<quantityPerOuterPackage>4</quantityPerOuterPackage>
 		<orderItem>
-			<itemKey>POL #1</itemKey>
+			<itemKey>POL#1</itemKey>
 			<baseItem>
 				<itemUid>14220893</itemUid>
 				<itemTypeCode>Main</itemTypeCode>
@@ -383,11 +383,337 @@
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>BuyerNumber</itemIdentifierTypeCode>
-					<itemIdentifierValue>Apples</itemIdentifierValue>
+					<itemIdentifierValue>2222</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>ShortDescription</itemIdentifierTypeCode>
-					<itemIdentifierValue />
+					<itemIdentifierValue>Orange</itemIdentifierValue>
+				</itemIdentifier>
+				<itemIdentifier>
+					<itemIdentifierTypeCode>FreightClass</itemIdentifierTypeCode>
+					<itemIdentifierValue>70</itemIdentifierValue>
+				</itemIdentifier>
+				<itemIdentifier>
+					<itemIdentifierTypeCode>CommodityClass</itemIdentifierTypeCode>
+					<itemIdentifierValue>Fruit</itemIdentifierValue>
+				</itemIdentifier>
+				<itemIdentifier>
+					<itemIdentifierTypeCode>CommodityDescription</itemIdentifierTypeCode>
+					<itemIdentifierValue/>
+				</itemIdentifier>
+				<quantity>200</quantity>
+				<unitOfMeasureCode>PC</unitOfMeasureCode>
+				<packageInstruction>
+					<packMethodCode>CT</packMethodCode>
+				</packageInstruction>
+				<itemDate>
+					<itemDateTypeCode>EarliestDate</itemDateTypeCode>
+					<itemDateValue>2018-04-22T00:00:00Z</itemDateValue>
+				</itemDate>
+				<itemDate>
+					<itemDateTypeCode>LatestDate</itemDateTypeCode>
+					<itemDateValue>2018-04-30T00:00:00Z</itemDateValue>
+				</itemDate>
+				<itemDate>
+					<itemDateTypeCode>PromisedDelivery</itemDateTypeCode>
+					<itemDateValue>2018-05-22T00:00:00Z</itemDateValue>
+				</itemDate>
+				<itemDate>
+					<itemDateTypeCode>DeliveryWindowEnd</itemDateTypeCode>
+					<itemDateValue>2018-05-30T00:10:00Z</itemDateValue>
+				</itemDate>
+				<itemDate>
+					<itemDateTypeCode>DeliveryWindowStart</itemDateTypeCode>
+					<itemDateValue>2018-05-22T00:10:00Z</itemDateValue>
+				</itemDate>
+				<!-- <itemDate>
+					<itemDateTypeCode>PickupWindowEnd</itemDateTypeCode>
+					<itemDateValue>2018-04-25T00:00:00Z</itemDateValue>
+				</itemDate>
+				<itemDate>
+					<itemDateTypeCode>PickupWindowStart</itemDateTypeCode>
+					<itemDateValue>2018-04-22T00:00:00Z</itemDateValue>
+				</itemDate>
+				<itemDate>
+					<itemDateTypeCode>ShipWindowEnd</itemDateTypeCode>
+					<itemDateValue>2018-04-25T00:00:00Z</itemDateValue>
+				</itemDate> -->
+				<shipmentMethodCode>A</shipmentMethodCode>
+				<!-- <measurement>
+               <measurementTypeCode>NetWeight</measurementTypeCode>
+               <measurementValue>10</measurementValue>
+               <unitOfMeasureCode>KG</unitOfMeasureCode>
+            </measurement>
+            <measurement>
+               <measurementTypeCode>NetNetWeight</measurementTypeCode>
+               <measurementValue>10</measurementValue>
+               <unitOfMeasureCode>KG</unitOfMeasureCode>
+            </measurement> -->
+				<measurement>
+					<measurementTypeCode>GrossWeight</measurementTypeCode>
+					<measurementValue>10</measurementValue>
+					<unitOfMeasureCode>KG</unitOfMeasureCode>
+				</measurement>
+				<measurement>
+					<measurementTypeCode>GrossVolume</measurementTypeCode>
+					<measurementValue>2</measurementValue>
+					<unitOfMeasureCode>CR</unitOfMeasureCode>
+				</measurement>
+				<party>
+					<identification>
+						<type>partnerCode</type>
+						<value>Consolidator</value>
+					</identification>
+					<partyRoleCode>LogisticsProvider</partyRoleCode>
+					<memberId>5717988960027849</memberId>
+					<name>DHL International Supply Chain</name>
+					<contact>
+						<name>Member Services</name>
+					</contact>
+					<contact>
+						<emailAddress>rama.rangi@gtnexus.com</emailAddress>
+						<phone>852 2828-6888</phone>
+						<department>Departmentrama13</department>
+					</contact>
+					<address>
+						<addressLine1>1 Kalisa Way, Suite 112</addressLine1>
+						<city>Paramus</city>
+						<stateOrProvince>NJ</stateOrProvince>
+						<postalCodeNumber>07652</postalCodeNumber>
+						<countryCode>US</countryCode>
+						<locationQualifierCode>UNLocationCode</locationQualifierCode>
+						<locationCode />
+					</address>
+				</party>
+				<party>
+					<identification>
+						<type>partnerCode</type>
+						<value>Consignee</value>
+					</identification>
+					<partyRoleCode>Consignee</partyRoleCode>
+					<memberId />
+					<name>Test_Consignee</name>
+					<contact>
+						<name>Consignee</name>
+					</contact>
+					<contact>
+						<emailAddress>rama.rangi@gtnexus.com</emailAddress>
+						<phone>852 2828-6888</phone>
+						<department>Departmentrama14</department>
+					</contact>
+					<address>
+						<addressLine1>75 Buyer Lane</addressLine1>
+						<city>New York</city>
+						<stateOrProvince>NY</stateOrProvince>
+						<postalCodeNumber>10038</postalCodeNumber>
+						<countryCode>US</countryCode>
+					</address>
+				</party>
+				<party>
+					<identification>
+						<type>partnerCode</type>
+						<value>Broker</value>
+					</identification>
+					<partyRoleCode>CustomsBroker</partyRoleCode>
+					<memberId />
+					<name>Rama Custom Broker</name>
+					<contact>
+						<name>Member Services</name>
+					</contact>
+					<contact>
+						<phone>852 2828-6888</phone>
+						<emailAddress>rama.rangi@gtnexus.com</emailAddress>
+						<department>Departmentrama16</department>
+					</contact>
+					<address>
+						<addressLine1>200 Oak Street</addressLine1>
+						<city />
+						<stateOrProvince />
+						<postalCodeNumber>52761</postalCodeNumber>
+						<countryCode>CN</countryCode>
+						<contact>
+							<emailAddress>rama.rangi@gtnexus.com</emailAddress>
+						</contact>
+						<locationQualifierCode>UNLocationCode</locationQualifierCode>
+						<locationCode>CNAAT</locationCode>
+					</address>
+				</party>
+				<party>
+					<identification>
+						<type>partnerCode</type>
+						<value>FinalReceiver</value>
+					</identification>
+					<partyRoleCode>FinalReceiver</partyRoleCode>
+					<memberId />
+					<name>Rama Final Receiver</name>
+					<contact>
+						<phone>852 2828-6888</phone>
+						<emailAddress>rama.rangi@gtnexus.com</emailAddress>
+						<department>Departmentrama16</department>
+					</contact>
+					<address>
+						<addressLine1>15/F Island Place Tower</addressLine1>
+						<addressLine2>510 Kings Road</addressLine2>
+						<city>Altay</city>
+						<stateOrProvince>AL</stateOrProvince>
+						<postalCodeNumber>52761</postalCodeNumber>
+						<countryCode>CN</countryCode>
+						<locationQualifierCode>UNLocationCode</locationQualifierCode>
+						<locationCode>CNAAT</locationCode>
+					</address>
+				</party>
+				<party>
+					<identification>
+						<type>partnerCode</type>
+						<value>Factory</value>
+					</identification>
+					<partyRoleCode>OriginOfGoods</partyRoleCode>
+					<memberId />
+					<name>Manufacturer</name>
+					<contact>
+						<name>Member Services</name>
+					</contact>
+					<contact>
+						<emailAddress>rama.rangi@gtnexus.com</emailAddress>
+						<department>Departmentrama177</department>
+					</contact>
+					<address>
+						<addressLine1>75 Sellers Road</addressLine1>
+						<city>Atlanta</city>
+						<stateOrProvince>GA</stateOrProvince>
+						<postalCodeNumber>10038</postalCodeNumber>
+						<countryCode>US</countryCode>
+					</address>
+				</party>
+				<party>
+					<identification>
+						<type>partnerCode</type>
+						<value>NotifyParty1</value>
+					</identification>
+					<partyRoleCode>NotifyParty1</partyRoleCode>
+					<memberId />
+					<name>NotifyParty1</name>
+					<contact>
+						<name>Member Services</name>
+					</contact>
+					<contact>
+						<emailAddress>rama.rangi@gtnexus.com</emailAddress>
+						<phone>852 2828-6888</phone>
+						<department>Departmentrama155</department>
+					</contact>
+					<address>
+						<addressLine1>15/F Island Place Tower</addressLine1>
+						<addressLine2>510 Kings Road</addressLine2>
+						<city>Altay</city>
+						<postalCodeNumber>52761</postalCodeNumber>
+						<countryCode>CN</countryCode>
+						<locationQualifierCode>UNLocationCode</locationQualifierCode>
+						<locationCode>CNAAT</locationCode>
+					</address>
+				</party>
+				<party>
+					<identification>
+						<type>partnerCode</type>
+						<value>NotifyParty2</value>
+					</identification>
+					<partyRoleCode>NotifyParty2</partyRoleCode>
+					<memberId />
+					<name>NotifyParty2</name>
+					<contact>
+						<name>Member Services</name>
+					</contact>
+					<contact>
+						<emailAddress>rama.rangi@gtnexus.com</emailAddress>
+						<phone>852 2828-6888</phone>
+						<department>Departmentrama88</department>
+					</contact>
+					<address>
+						<addressLine1>15/F Island Place Tower</addressLine1>
+						<addressLine2>510 Kings Road</addressLine2>
+						<city>Altay</city>
+						<postalCodeNumber>52761</postalCodeNumber>
+						<countryCode>CN</countryCode>
+						<locationQualifierCode>UNLocationCode</locationQualifierCode>
+						<locationCode>CNAAT</locationCode>
+					</address>
+				</party>
+				<party>
+					<identification>
+						<type>partnerCode</type>
+						<value>FreightForwarder</value>
+					</identification>
+					<partyRoleCode>FreightForwarder</partyRoleCode>
+					<memberId />
+					<name>Forwarding (FF)rama</name>
+					<contact>
+						<name>Member Services</name>
+					</contact>
+					<contact>
+						<department>Departmentrama1456</department>
+						<emailAddress>rama.rangi@gtnexus.com</emailAddress>
+						<phone>852 2828-6888</phone>
+					</contact>
+					<address>
+						<addressLine1>15/F Island Place Tower</addressLine1>
+						<addressLine2>510 Kings Road</addressLine2>
+						<city>Altay</city>
+						<stateOrProvince>AL</stateOrProvince>
+						<postalCodeNumber>52761</postalCodeNumber>
+						<countryCode>CN</countryCode>
+						<locationQualifierCode>UNLocationCode</locationQualifierCode>
+						<locationCode>CNAAT</locationCode>
+					</address>
+				</party>
+			</baseItem>
+			<itemPrice>
+				<pricePerUnit>10</pricePerUnit>
+				<totalPrice>100</totalPrice>
+			</itemPrice>
+			<originLocation>
+				<name>New Plymouth</name>
+				<!-- <address> <addressLine1></addressLine1> <city>Mangalore</city> <countryCode>IN</countryCode> <locationQualifierCode>UNLocationCode</locationQualifierCode> <locationCode>INIXE</locationCode> </address> -->
+			</originLocation>
+			<destinationLocation>
+				<name>Toowoomba</name>
+				<!-- <address>
+					<addressLine1/>
+					<city>Toowoomba</city>
+					<countryCode>AU</countryCode>
+					<locationQualifierCode>UNLocationCode</locationQualifierCode>
+					<locationCode>AUTWB</locationCode>
+				</address> -->
+			</destinationLocation>
+			<isHazardous>false</isHazardous>
+		</orderItem>
+		
+		<orderItem>
+			<itemKey>POL#2</itemKey>
+			<baseItem>
+				<itemUid>14220893</itemUid>
+				<itemTypeCode>Main</itemTypeCode>
+				<itemIdentifier>
+					<itemIdentifierTypeCode>ItemSequenceNumber</itemIdentifierTypeCode>
+					<itemIdentifierValue>0002</itemIdentifierValue>
+				</itemIdentifier>
+				<itemIdentifier>
+					<itemIdentifierTypeCode>BuyerNumber</itemIdentifierTypeCode>
+					<itemIdentifierValue>2224</itemIdentifierValue>
+				</itemIdentifier>
+				<itemIdentifier>
+					<itemIdentifierTypeCode>ShortDescription</itemIdentifierTypeCode>
+					<itemIdentifierValue>Banana</itemIdentifierValue>
+				</itemIdentifier>
+				<itemIdentifier>
+					<itemIdentifierTypeCode>FreightClass</itemIdentifierTypeCode>
+					<itemIdentifierValue>50</itemIdentifierValue>
+				</itemIdentifier>
+				<itemIdentifier>
+					<itemIdentifierTypeCode>CommodityClass</itemIdentifierTypeCode>
+					<itemIdentifierValue>Fruit</itemIdentifierValue>
+				</itemIdentifier>
+				<itemIdentifier>
+					<itemIdentifierTypeCode>CommodityDescription</itemIdentifierTypeCode>
+					<itemIdentifierValue/>
 				</itemIdentifier>
 				<quantity>200</quantity>
 				<unitOfMeasureCode>PC</unitOfMeasureCode>

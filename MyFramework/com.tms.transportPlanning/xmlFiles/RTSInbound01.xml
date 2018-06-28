@@ -12,7 +12,7 @@
 			<functionCode>Create</functionCode>
 		</functionRequest>
 
-		<shippingOrderNumber>INDEPENDENTRTS2TO075</shippingOrderNumber>
+		<shippingOrderNumber>INDEPENDENTRTS2TO086</shippingOrderNumber>
 		<readyToShipStatusCode>Approved</readyToShipStatusCode>
 
 		<readyToShipUid>714589</readyToShipUid>
@@ -380,9 +380,9 @@
 		<!--Line Item 1-->
 
 		<readyToShipOrderItem>
-			<orderNumber>TestUO0012</orderNumber>
+			<orderNumber>TestUO00122221</orderNumber>
 
-			<itemKey>POL #1</itemKey>
+			<itemKey>POL#1</itemKey>
 			<freightPaymentCode>Collect</freightPaymentCode>
 			<incotermCode>DAP</incotermCode>
 			<serviceTypeCode>ContainerYard</serviceTypeCode>
@@ -808,7 +808,7 @@
 				<!--ItemIdentifier-->
 				<itemIdentifier>
 					<itemIdentifierTypeCode>BuyerNumber</itemIdentifierTypeCode>
-					<itemIdentifierValue>9861446</itemIdentifierValue>
+					<itemIdentifierValue>2224</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>Color</itemIdentifierTypeCode>
@@ -840,7 +840,7 @@
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>ShortDescription</itemIdentifierTypeCode>
-					<itemIdentifierValue>Colors Chemicals 22</itemIdentifierValue>
+					<itemIdentifierValue>VW</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>Size</itemIdentifierTypeCode>
@@ -860,15 +860,15 @@
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>FreightClass</itemIdentifierTypeCode>
-					<itemIdentifierValue>500</itemIdentifierValue>
+					<itemIdentifierValue>50</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>CommodityClass</itemIdentifierTypeCode>
-					<itemIdentifierValue>Tst</itemIdentifierValue>
+					<itemIdentifierValue>Vehicle</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>CommodityDescription</itemIdentifierTypeCode>
-					<itemIdentifierValue>inflamable Chemicals</itemIdentifierValue>
+					<itemIdentifierValue/>
 				</itemIdentifier>
 				<!--itemDate-->
 				<itemDate>
@@ -947,12 +947,12 @@
 		</readyToShipOrderItem>
 
 
-		
+
 		<!-- Line Item #2-->
 		<readyToShipOrderItem>
-			<orderNumber>TestUO0012</orderNumber>
+			<orderNumber>TestUO00122221</orderNumber>
 
-			<itemKey>POL #2</itemKey>
+			<itemKey>POL#2</itemKey>
 			<freightPaymentCode>Collect</freightPaymentCode>
 			<incotermCode>DAP</incotermCode>
 			<serviceTypeCode>ContainerYard</serviceTypeCode>
@@ -1378,7 +1378,7 @@
 				<!--ItemIdentifier-->
 				<itemIdentifier>
 					<itemIdentifierTypeCode>BuyerNumber</itemIdentifierTypeCode>
-					<itemIdentifierValue>9861</itemIdentifierValue>
+					<itemIdentifierValue>2230fdfdf</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>Color</itemIdentifierTypeCode>
@@ -1410,7 +1410,7 @@
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>ShortDescription</itemIdentifierTypeCode>
-					<itemIdentifierValue>Colors Chemicals 22</itemIdentifierValue>
+					<itemIdentifierValue>BMW</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>Size</itemIdentifierTypeCode>
@@ -1430,15 +1430,15 @@
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>FreightClass</itemIdentifierTypeCode>
-					<itemIdentifierValue>500</itemIdentifierValue>
+					<itemIdentifierValue>70</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>CommodityClass</itemIdentifierTypeCode>
-					<itemIdentifierValue>Tst</itemIdentifierValue>
+					<itemIdentifierValue>Vehicle</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>CommodityDescription</itemIdentifierTypeCode>
-					<itemIdentifierValue>inflamable Chemicals</itemIdentifierValue>
+					<itemIdentifierValue/>
 				</itemIdentifier>
 				<!--itemDate-->
 				<itemDate>
@@ -1515,7 +1515,6 @@
 				</measurement>
 			</baseItem>
 		</readyToShipOrderItem>
-
 		<transportEquipment>
 			<transportEquipmentTypeCode>StandardGOH20</transportEquipmentTypeCode>
 			<equipmentType>20' Standard GOH</equipmentType>
