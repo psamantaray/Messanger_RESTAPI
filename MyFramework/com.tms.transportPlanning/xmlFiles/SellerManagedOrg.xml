@@ -1,0 +1,82 @@
+<ReadyToShipOrderEnvelope>
+	<header>
+		<documentVersionCode>311</documentVersionCode>
+		<messageId>893530018</messageId>
+		<senderId>893530018</senderId>
+		<receiverId>893530018</receiverId>
+		<count>1</count>
+	</header>
+	<readyToShipOrder>
+		<functionRequest>
+			<functionCode>CreateOrUpdate</functionCode>
+			<documentModeCode>Replace</documentModeCode>
+		</functionRequest>
+		<shippingOrderNumber>INDEPENDENTRTS2TOSeller8</shippingOrderNumber>
+		<readyToShipStatusCode>Approved</readyToShipStatusCode>
+	<!-- 	<licenseeRoleCode>Seller</licenseeRoleCode> -->
+		<cargoReadyDateTime>2018-04-16T00:01:45Z</cargoReadyDateTime>
+		<seller>
+			<partyRoleCode>Seller</partyRoleCode>
+			<name>pfizer</name>
+			<organizationUid>5717988960002481</organizationUid>
+			<divisionUid>57476</divisionUid>
+			<!-- <divisionUid>57372</divisionUid> -->
+		</seller>
+		
+		<shipper>
+			<partyRoleCode>Shipper</partyRoleCode>
+			<organizationUid>5717988960002481</organizationUid>
+			<name>pfizer</name>
+			<divisionUid>57476</divisionUid>
+		</shipper>	
+		<originLocation>
+			<name>New Plymouth</name>
+		</originLocation>
+
+		<customField>
+			<customFieldType>ItineraryCode</customFieldType>
+			<customFieldValue>NZ2AU</customFieldValue>
+		</customField>
+
+		<readyToShipOrderItem>
+			<orderNumber>unifiedOrder02</orderNumber>
+			<itemKey>POL#2</itemKey>
+			<destinationLocation>
+				<name>Toowoomba</name>
+			</destinationLocation>
+			<consignee>
+				<partyRoleCode>Consignee</partyRoleCode>
+				<organizationUid>5717988960036427</organizationUid>
+				<name>adidas AG</name>
+			</consignee>
+			<baseItem>
+				<itemTypeCode>Main</itemTypeCode>
+				<itemIdentifier>
+					<itemIdentifierTypeCode>BuyerNumber</itemIdentifierTypeCode>
+					<itemIdentifierValue>2224</itemIdentifierValue>
+				</itemIdentifier>
+				<itemDate>
+					<itemDateTypeCode>PromisedDelivery</itemDateTypeCode>
+					<itemDateValue>2018-05-20T00:00:00Z</itemDateValue>
+				</itemDate>
+				<itemDate>
+					<itemDateTypeCode>ShipWindowEnd</itemDateTypeCode>
+					<itemDateValue>2018-04-17T00:00:00Z</itemDateValue>
+				</itemDate>
+				<itemDate>
+					<itemDateTypeCode>ShipWindowStart</itemDateTypeCode>
+					<itemDateValue>2018-04-15T00:00:00Z</itemDateValue>
+				</itemDate>
+				<quantity>1</quantity>
+				<unitOfMeasureCode>Bag</unitOfMeasureCode>
+				<transportationMethodCode>Ocean</transportationMethodCode>
+				<measurement>
+					<grossWeight>40</grossWeight>
+					<weightUnitCode>Kilogram</weightUnitCode>
+					<grossVolume>2</grossVolume>
+					<volumeUnitCode>CubicMeter</volumeUnitCode>
+				</measurement>
+			</baseItem>
+		</readyToShipOrderItem>
+	</readyToShipOrder>
+</ReadyToShipOrderEnvelope>

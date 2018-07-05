@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
-  <parameter name="RTSfilePath" value="\xmlFiles\RTSInbound01.xml"/>
+  <parameter name="RTSfilePath" value="\xmlFiles\RTSInbound02.xml"/>
   <parameter name="browser" value="Chrome"/>
   <parameter name="appUrl" value="https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info"/>
   <parameter name="UOfilePath" value="\xmlFiles\Pfizer_FTE_UO.xml"/>
   <test name="Test(failed)">
-    <parameter name="RTSfilePath" value="\xmlFiles\RTSInbound01.xml"/>
+    <parameter name="RTSfilePath" value="\xmlFiles\RTSInbound02.xml"/>
     <parameter name="browser" value="Chrome"/>
     <parameter name="appUrl" value="https://fte-7a7ace32c7114d6db018ebe9481da888-l.fte.gtnexus.info"/>
     <parameter name="UOfilePath" value="\xmlFiles\Pfizer_FTE_UO.xml"/>
     <classes>
-      <class name="com.tms.transportPlanning.TestRunner">
+      <class name="com.tms.transportPlanning.TestCases">
         <methods>
           <include name="reporting"/>
-          <include name="UO_RTS_TOCreationFlow" invocation-numbers="0"/>
           <include name="afterExecution"/>
+          <include name="IndependentRTSCreation" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.tms.transportPlanning.TestRunner -->
+      </class> <!-- com.tms.transportPlanning.TestCases -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

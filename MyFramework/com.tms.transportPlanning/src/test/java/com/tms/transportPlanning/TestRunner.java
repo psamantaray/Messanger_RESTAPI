@@ -18,6 +18,10 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import dataTable.DataTable;
 
+/**
+ * @author psamantaray
+ *
+ */
 @Listeners({utility.Listner.class})
 public class TestRunner {
 	public static WebDriver driver;
@@ -34,46 +38,9 @@ public class TestRunner {
 	@BeforeTest
 	public void reporting() {
 		reports = new ExtentReports (System.getProperty("user.dir") +"/test-output/STMExtentReport.html", true);
-		logger = reports.startTest("GTNX Application test");
+		logger = reports.startTest("Remove UO dependency from RTS (GTN-30675)");
 	}
 	
-	
-	@Test(enabled=true)
-	@Parameters({"browser","appUrl","UOfilePath"})
-	public void UO_RTS_TOCreationFlow(String browser, String appUrl, String UOfilePath) throws InterruptedException, CustomExceptions{
-		
-		commBusinessFun = new CommonBusinessFunction();
-		commBusinessFun.launchBrowser(browser);
-		commBusinessFun.launchApplication(appUrl);
-		commBusinessFun.loginTOApplication();
-		String orderNumber = commBusinessFun.createUO(System.getProperty("user.dir")+UOfilePath);
-		System.out.println("Order Number: "+orderNumber);
-		
-		//Switch to GTNX Application
-		commBusinessFun.switchToGTNXAppFromTCX();
-		commBusinessFun.shadowuserLogin();
-		commBusinessFun.searchForTOInFlexViewUsingOrderNumber(orderNumber);
-		commBusinessFun.FEFTOItemsTabValidation();
-		
-	}
-	
-	@Test(enabled=false)
-	@Parameters({"browser","appUrl","RTSfilePath"})
-	public void IndependentRTSCreation(String browser, String appUrl, String RTSfilePath) throws InterruptedException, CustomExceptions{
-		
-		commBusinessFun = new CommonBusinessFunction();
-		commBusinessFun.launchBrowser(browser);
-		commBusinessFun.launchApplication(appUrl);
-		commBusinessFun.loginTOApplication();
-		String rtsNumber = commBusinessFun.createIndependentRTS(System.getProperty("user.dir")+RTSfilePath);
-		System.out.println("RTS Number: "+rtsNumber);
-		
-		//Switch to GTNX Application
-		commBusinessFun.switchToGTNXAppFromTCX();
-		commBusinessFun.shadowuserLogin();
-		commBusinessFun.searchForTOInFlexViewUsingRTSNumber(rtsNumber);
-		commBusinessFun.FEFTOItemsTabValidation();
-	}
 	@AfterTest
 	public void afterExecution() throws InterruptedException {
 		reports.endTest(logger);

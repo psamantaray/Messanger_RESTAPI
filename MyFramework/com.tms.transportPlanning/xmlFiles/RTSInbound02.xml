@@ -9,10 +9,11 @@
 	<readyToShipOrder>
 		<!--ReadyToShipHeader-->
 		<functionRequest>
-			<functionCode>Create</functionCode>
+			<functionCode>CreateOrUpdate</functionCode>
+			<!-- <documentModeCode>Replace</documentModeCode> -->
 		</functionRequest>
 
-		<shippingOrderNumber>INDEPENDENTRTS2TO0114</shippingOrderNumber>
+		<shippingOrderNumber>INDEPENDENTRTS2TOSingleLine10104</shippingOrderNumber>
 		<readyToShipStatusCode>Approved</readyToShipStatusCode>
 
 		<readyToShipUid>714589</readyToShipUid>
@@ -562,495 +563,8 @@
 
 			<freightForwarder>
 				<partyRoleCode>FreightForwarder</partyRoleCode>
-				<organizationUid>5717988960036427</organizationUid>
-				<!-- <divisionUid>57354</divisionUid> -->
-				<name>adidas AG</name>
-				<longName>adidas AG</longName>
-				<contact>
-					<name>Member Services</name>
-					<emailAddress>vibhor.jain@infor.com</emailAddress>
-					<phone>852 2828-6888</phone>
-					<fax>852 2828-6888</fax>
-					<department>ABCD</department>
-					<region>state</region>
-				</contact>
-				<address>
-					<addressLine1>Adi-Dassler-Strasse 1</addressLine1>
-					<addressLine2>Adi-Dassler-Strasse 1</addressLine2>
-					<city>Boston</city>
-					<stateOrProvince>MA</stateOrProvince>
-					<postalCodeNumber>D-91074</postalCodeNumber>
-					<country>US</country>
-					<place>
-						<placeTypeCode>UNLocationCode</placeTypeCode>
-						<placeCode>HK01</placeCode>
-						<identification>
-							<idType>3453</idType>
-							<idValue>4gsbss</idValue>
-						</identification>
-						<name>Adidas Ag</name>
-					</place>
-				</address>
-				<identification>
-					<idType>3453</idType>
-					<idValue>4gsbss</idValue>
-				</identification>
-				<customField>
-					<customFieldType>NewCustomfield1</customFieldType>
-					<customFieldValue>Header_Custom_Field_From_Inbound_RTS</customFieldValue>
-				</customField>
-			</freightForwarder>
-
-			<manufacturer>
-				<partyRoleCode>Manufacturer</partyRoleCode>
-				<organizationUid>5717988960036427</organizationUid>
-				<!-- <divisionUid>57354</divisionUid> -->
-				<name>adidas AG</name>
-				<longName>adidas AG</longName>
-				<contact>
-					<name>Member Services</name>
-					<emailAddress>vibhor.jain@infor.com</emailAddress>
-					<phone>852 2828-6888</phone>
-					<fax>852 2828-6888</fax>
-					<department>ABCD</department>
-					<region>state</region>
-				</contact>
-				<address>
-					<addressLine1>Adi-Dassler-Strasse 1</addressLine1>
-					<addressLine2>Adi-Dassler-Strasse 1</addressLine2>
-					<city>Boston</city>
-					<stateOrProvince>MA</stateOrProvince>
-					<postalCodeNumber>D-91074</postalCodeNumber>
-					<country>US</country>
-					<place>
-						<placeTypeCode>UNLocationCode</placeTypeCode>
-						<placeCode>HK01</placeCode>
-						<identification>
-							<idType>3453</idType>
-							<idValue>4gsbss</idValue>
-						</identification>
-						<name>Adidas Ag</name>
-					</place>
-				</address>
-				<identification>
-					<idType>3453</idType>
-					<idValue>4gsbss</idValue>
-				</identification>
-				<customField>
-					<customFieldType>NewCustomfield1</customFieldType>
-					<customFieldValue>Header_Custom_Field_From_Inbound_RTS</customFieldValue>
-				</customField>
-			</manufacturer>
-
-			<notifyParty>
-				<partyRoleCode>NotifyParty</partyRoleCode>
-				<organizationUid>5717988960036427</organizationUid>
-				<!-- <divisionUid>57354</divisionUid> -->
-				<name>adidas AG</name>
-				<longName>adidas AG</longName>
-				<contact>
-					<name>Member Services</name>
-					<emailAddress>vibhor.jain@infor.com</emailAddress>
-					<phone>852 2828-6888</phone>
-					<fax>852 2828-6888</fax>
-					<department>ABCD</department>
-					<region>state</region>
-				</contact>
-				<address>
-					<addressLine1>Adi-Dassler-Strasse 1</addressLine1>
-					<addressLine2>Adi-Dassler-Strasse 1</addressLine2>
-					<city>Boston</city>
-					<stateOrProvince>MA</stateOrProvince>
-					<postalCodeNumber>D-91074</postalCodeNumber>
-					<country>US</country>
-					<place>
-						<placeTypeCode>UNLocationCode</placeTypeCode>
-						<placeCode>HK01</placeCode>
-						<identification>
-							<idType>3453</idType>
-							<idValue>4gsbss</idValue>
-						</identification>
-						<name>Adidas Ag</name>
-					</place>
-				</address>
-				<identification>
-					<idType>3453</idType>
-					<idValue>4gsbss</idValue>
-				</identification>
-				<customField>
-					<customFieldType>NewCustomfield1</customFieldType>
-					<customFieldValue>Header_Custom_Field_From_Inbound_RTS</customFieldValue>
-				</customField>
-			</notifyParty>
-
-			<alsoNotifyParty>
-				<partyRoleCode>AlsoNotifyParty</partyRoleCode>
-				<organizationUid>5717988960036427</organizationUid>
-				<!-- <divisionUid>57354</divisionUid> -->
-				<name>adidas AG</name>
-				<longName>adidas AG</longName>
-				<contact>
-					<name>Member Services</name>
-					<emailAddress>vibhor.jain@infor.com</emailAddress>
-					<phone>852 2828-6888</phone>
-					<fax>852 2828-6888</fax>
-					<department>ABCD</department>
-					<region>state</region>
-				</contact>
-				<address>
-					<addressLine1>Adi-Dassler-Strasse 1</addressLine1>
-					<addressLine2>Adi-Dassler-Strasse 1</addressLine2>
-					<city>Boston</city>
-					<stateOrProvince>MA</stateOrProvince>
-					<postalCodeNumber>D-91074</postalCodeNumber>
-					<country>US</country>
-					<place>
-						<placeTypeCode>UNLocationCode</placeTypeCode>
-						<placeCode>HK01</placeCode>
-						<identification>
-							<idType>3453</idType>
-							<idValue>4gsbss</idValue>
-						</identification>
-						<name>Adidas Ag</name>
-					</place>
-				</address>
-				<identification>
-					<idType>3453</idType>
-					<idValue>4gsbss</idValue>
-				</identification>
-				<customField>
-					<customFieldType>NewCustomfield1</customFieldType>
-					<customFieldValue>Header_Custom_Field_From_Inbound_RTS</customFieldValue>
-				</customField>
-			</alsoNotifyParty>
-
-			<!--Destination info-->
-
-			<destinationLocation>
-				<locationTypeCode>AssemblyLine</locationTypeCode>
-				<name>Toowoomba4545B</name>
-				<!-- <locationUid>34850</locationUid> -->
-				<longName>Toowoomba4545B</longName>
-
-				<!-- <ownerOrganization>
-					<organizationUid>5717988960036427</organizationUid>
-					<identification>
-						<idType>3453</idType>
-						<idValue>4gsbss</idValue>
-					</identification>
-				</ownerOrganization> -->
-				<!-- <address>
-					<addressLine1>200 Oak Street</addressLine1>
-					<addressLine2>510 Kings Road</addressLine2>
-					<city>toowoomba</city>
-					<stateOrProvince></stateOrProvince>
-					<postalCodeNumber>5660052</postalCodeNumber>
-					<country>AU</country>
-					<place>
-						<placeTypeCode>UNLocationCode</placeTypeCode>
-						<placeCode>AUTWB</placeCode>
-						<identification>
-							<idType>3453</idType>
-							<idValue>4gsbss</idValue>
-						</identification>
-						<name>Adidas Ag</name>
-					</place>
-				</address> -->
-				<longitude>77.580643</longitude>
-				<latitude>12.972442</latitude>
-			</destinationLocation>
-			<!--ItemPrice-->
-			<itemPrice>
-				<pricePerUnit>1</pricePerUnit>
-				<totalPrice>120</totalPrice>
-				<pricing>
-					<priceTypeCode>PriceRTL</priceTypeCode>
-					<priceValue>2</priceValue>
-					<currencyCode>AED</currencyCode>
-				</pricing>
-				<pricing>
-					<priceTypeCode>PriceELC</priceTypeCode>
-					<priceValue>2</priceValue>
-					<currencyCode>AED</currencyCode>
-				</pricing>
-				<pricing>
-					<priceTypeCode>PriceFCP</priceTypeCode>
-					<priceValue>2</priceValue>
-					<currencyCode>AED</currencyCode>
-				</pricing>
-			</itemPrice>
-			<baseItem>
-
-				<itemTypeCode>Main</itemTypeCode>
-				<packageInstruction>
-					<packInstructionReference>stringtest1</packInstructionReference>
-					<packageType>stringtest2</packageType>
-					<packMethodCode>Bag</packMethodCode>
-					<quantityPerInnerPackage>20</quantityPerInnerPackage>
-					<quantityPerOuterPackage>20</quantityPerOuterPackage>
-				</packageInstruction>
-				<!--   <itemStatusCode>Canceled</itemStatusCode> -->
-				<!--<itemStatusCode>Canceled,Closed,Open,Unconfirmed</itemStatusCode>-->
-				<itemStatusCode>Open</itemStatusCode>
-				<!--itemVariance-->
-				<itemVariance>
-					<upperVariance>50</upperVariance>
-					<lowerVariance>20</lowerVariance>
-					<varianceTypeCode>Percent</varianceTypeCode>
-				</itemVariance>
-
-				<itemVariance>
-					<upperVariance>50</upperVariance>
-					<lowerVariance>20</lowerVariance>
-					<varianceTypeCode>Quantity</varianceTypeCode>
-				</itemVariance>
-
-				<!--ItemIdentifier-->
-				<itemIdentifier>
-					<itemIdentifierTypeCode>BuyerNumber</itemIdentifierTypeCode>
-					<itemIdentifierValue>2222</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>Color</itemIdentifierTypeCode>
-					<itemIdentifierValue>String_11</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>CountryOfOrigin</itemIdentifierTypeCode>
-					<itemIdentifierValue>String_12</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>ItemSequenceNumber</itemIdentifierTypeCode>
-					<itemIdentifierValue>String_13</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>Level</itemIdentifierTypeCode>
-					<itemIdentifierValue>String_14</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>LotNumber</itemIdentifierTypeCode>
-					<itemIdentifierValue>Dumbell Plates</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>QuotaCategory</itemIdentifierTypeCode>
-					<itemIdentifierValue>String_15</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>SellerNumber</itemIdentifierTypeCode>
-					<itemIdentifierValue>String_16!@#$%</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>ShortDescription</itemIdentifierTypeCode>
-					<itemIdentifierValue>VW</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>Size</itemIdentifierTypeCode>
-					<itemIdentifierValue>String_18:',./?</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>SkuNumber</itemIdentifierTypeCode>
-					<itemIdentifierValue>String_19</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>Style</itemIdentifierTypeCode>
-					<itemIdentifierValue>String_20</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>UpcNumber</itemIdentifierTypeCode>
-					<itemIdentifierValue>漢字String_21</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>FreightClass</itemIdentifierTypeCode>
-					<itemIdentifierValue>50</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>CommodityClass</itemIdentifierTypeCode>
-					<itemIdentifierValue>Vehicle</itemIdentifierValue>
-				</itemIdentifier>
-				<itemIdentifier>
-					<itemIdentifierTypeCode>CommodityDescription</itemIdentifierTypeCode>
-					<itemIdentifierValue/>
-				</itemIdentifier>
-				<!--itemDate-->
-				<itemDate>
-					<itemDateTypeCode>EarliestDate</itemDateTypeCode>
-					<itemDateValue>2018-04-22T00:00:00Z</itemDateValue>
-				</itemDate>
-				<itemDate>
-					<itemDateTypeCode>LatestDate</itemDateTypeCode>
-					<itemDateValue>2018-04-30T00:00:00Z</itemDateValue>
-				</itemDate>
-				<itemDate>
-					<itemDateTypeCode>PromisedDelivery</itemDateTypeCode>
-					<itemDateValue>2018-05-22T00:00:00Z</itemDateValue>
-				</itemDate>
-				<itemDate>
-					<itemDateTypeCode>DeliveryWindowEnd</itemDateTypeCode>
-					<itemDateValue>2018-05-30T00:10:00Z</itemDateValue>
-				</itemDate>
-				<itemDate>
-					<itemDateTypeCode>DeliveryWindowStart</itemDateTypeCode>
-					<itemDateValue>2018-05-22T00:10:00Z</itemDateValue>
-				</itemDate>
-				<itemDate>
-					<itemDateTypeCode>PickupWindowEnd</itemDateTypeCode>
-					<itemDateValue>2018-04-25T00:00:00Z</itemDateValue>
-				</itemDate>
-				<itemDate>
-					<itemDateTypeCode>PickupWindowStart</itemDateTypeCode>
-					<itemDateValue>2018-04-22T00:00:00Z</itemDateValue>
-				</itemDate>
-				<itemDate>
-					<itemDateTypeCode>ShipWindowEnd</itemDateTypeCode>
-					<itemDateValue>2018-04-25T00:00:00Z</itemDateValue>
-				</itemDate>
-				<itemDate>
-					<itemDateTypeCode>ShipWindowStart</itemDateTypeCode>
-					<itemDateValue>2018-04-22T00:00:00Z</itemDateValue>
-				</itemDate>
-				<customsClassification>
-					<classificationNumber>Hts_code1</classificationNumber>
-					<classificationDescription>First_RTS_inbound_Validation</classificationDescription>
-					<country>US</country>
-				</customsClassification>
-				<!-- Line Appx CustomField-->
-				<customField>
-					<customFieldType>NewCustomfield1</customFieldType>
-					<customFieldValue>line1_Custom_Field_From_Inbound_RTS</customFieldValue>
-				</customField>
-
-				<!--itemDescriptor-->
-				<itemDescriptor>
-					<itemDescriptorTypeCode>LongDescription</itemDescriptorTypeCode>
-					<itemDescriptorValue>LongDescriptionLongDescriptionLongDescription</itemDescriptorValue>
-				</itemDescriptor>
-				<quantity>1</quantity>
-				<transportationMethodCode>Truck</transportationMethodCode>
-				<!--<transportationMethodCode>Air</transportationMethodCode>-->
-				<unitOfMeasureCode>Bag</unitOfMeasureCode>
-				<isInspectionRequired>true</isInspectionRequired>
-				<measurement>
-					<weightUnitCode>Kilogram</weightUnitCode>
-					<grossWeight>200</grossWeight>
-					<netWeight>10</netWeight>
-					<netNetWeight>100</netNetWeight>
-					<!--<weightUnitCode>Kilogram</weightUnitCode>-->                    
-					<grossVolume>20</grossVolume>
-					<volumeUnitCode>CubicMeter</volumeUnitCode>
-					<volumeWeight>15</volumeWeight>
-					<volumeWeightUnitCode>Kilogram</volumeWeightUnitCode>
-					<length>1000</length>
-					<width>2000</width>
-					<height>100</height>
-					<dimensionUnitCode>Centimeter</dimensionUnitCode>
-				</measurement>
-			</baseItem>
-		</readyToShipOrderItem>
-
-
-
-		<!-- Line Item #2-->	
-		<readyToShipOrderItem>
-			<orderNumber>TestUO00122222</orderNumber>
-			<itemKey>POL#2</itemKey>
-			<freightPaymentCode>Collect</freightPaymentCode>
-			<incotermCode>DAP</incotermCode>
-			<serviceTypeCode>ContainerYard</serviceTypeCode>
-
-			<orderedQuantity>10</orderedQuantity>
-
-			<packedQuantity>20</packedQuantity>
-			<packageQuantity>20</packageQuantity>
-
-			<packingStatusCode>Packed</packingStatusCode>
-			<isHazardous>false</isHazardous>
-			<carrier>
-				<partyRoleCode>Carrier</partyRoleCode>
-				<organizationUid>5717988960036427</organizationUid>
-				<!-- <divisionUid>57354</divisionUid> -->
-
-				<identification>
-					<idType>3453</idType>
-					<idValue>4gsbss</idValue>
-				</identification>
-				<customField>
-					<customFieldType>NewCustomfield1</customFieldType>
-					<customFieldValue>Header_Custom_Field_From_Inbound_RTS</customFieldValue>
-				</customField>
-				<name>adidas AG</name>
-				<longName>adidas AG</longName>
-				<contact>
-					<name>Member Services</name>
-					<emailAddress>vibhor.jain@infor.com</emailAddress>
-					<phone>852 2828-6888</phone>
-					<fax>852 2828-6888</fax>
-					<department>ABCD</department>
-					<region>state</region>
-				</contact>
-				<address>
-					<addressLine1>Adi-Dassler-Strasse 1</addressLine1>
-					<addressLine2>Adi-Dassler-Strasse 1</addressLine2>
-					<city>Boston</city>
-					<stateOrProvince>MA</stateOrProvince>
-					<postalCodeNumber>D-91074</postalCodeNumber>
-					<country>US</country>
-					<place>
-						<placeTypeCode>UNLocationCode</placeTypeCode>
-						<placeCode>HK01</placeCode>
-
-						<identification>
-							<idType>3453</idType>
-							<idValue>4gsbss</idValue>
-						</identification>
-						<name>Adidas Ag</name>
-					</place>
-				</address>	
-			</carrier>
-
-			<consignee>
-				<partyRoleCode>Consignee</partyRoleCode>
-				<organizationUid>5717988960036427</organizationUid>
-				<!-- <divisionUid>57354</divisionUid> -->
-				<name>adidas AG</name>
-				<longName>adidas AG</longName>
-				<contact>
-					<name>Member Services</name>
-					<emailAddress>vibhor.jain@infor.com</emailAddress>
-					<phone>852 2828-6888</phone>
-					<fax>852 2828-6888</fax>
-					<department>ABCD</department>
-					<region>state</region>
-				</contact>
-				<address>
-					<addressLine1>Adi-Dassler-Strasse 1</addressLine1>
-					<addressLine2>Adi-Dassler-Strasse 1</addressLine2>
-					<city>Boston</city>
-					<stateOrProvince>MA</stateOrProvince>
-					<postalCodeNumber>D-91074</postalCodeNumber>
-					<country>US</country>
-					<place>
-						<placeTypeCode>UNLocationCode</placeTypeCode>
-						<placeCode>HK01</placeCode>
-						<identification>
-							<idType>3453</idType>
-							<idValue>4gsbss</idValue>
-						</identification>
-						<name>Adidas Ag</name>
-					</place>
-				</address>
-				<identification>
-					<idType>3453</idType>
-					<idValue>4gsbss</idValue>
-				</identification>
-				<customField>
-					<customFieldType>NewCustomfield1</customFieldType>
-					<customFieldValue>Header_Custom_Field_From_Inbound_RTS</customFieldValue>
-				</customField>
-			</consignee>
-
-			<consolidator>
-				<partyRoleCode>Consolidator</partyRoleCode>
 				<organizationUid>5717988960027849</organizationUid>
-
+				<!-- <divisionUid>57354</divisionUid> -->
 				<name>DHL International Supply Chain</name>
 				<longName>DHL International Supply Chain</longName>
 				<contact>
@@ -1086,88 +600,6 @@
 					<customFieldType>NewCustomfield1</customFieldType>
 					<customFieldValue>Header_Custom_Field_From_Inbound_RTS</customFieldValue>
 				</customField>
-			</consolidator>
-
-			<customsBroker>
-				<partyRoleCode>CustomsBroker</partyRoleCode>
-				<organizationUid>5717988960036427</organizationUid>
-				<!-- <divisionUid>57354</divisionUid> -->
-				<name>adidas AG</name>
-				<longName>adidas AG</longName>
-				<contact>
-					<name>Member Services</name>
-					<emailAddress>vibhor.jain@infor.com</emailAddress>
-					<phone>852 2828-6888</phone>
-					<fax>852 2828-6888</fax>
-					<department>ABCD</department>
-					<region>state</region>
-				</contact>
-				<address>
-					<addressLine1>Adi-Dassler-Strasse 1</addressLine1>
-					<addressLine2>Adi-Dassler-Strasse 1</addressLine2>
-					<city>Boston</city>
-					<stateOrProvince>MA</stateOrProvince>
-					<postalCodeNumber>D-91074</postalCodeNumber>
-					<country>US</country>
-					<place>
-						<placeTypeCode>UNLocationCode</placeTypeCode>
-						<placeCode>HK01</placeCode>
-						<identification>
-							<idType>3453</idType>
-							<idValue>4gsbss</idValue>
-						</identification>
-						<name>Adidas Ag</name>
-					</place>
-				</address>
-				<identification>
-					<idType>3453</idType>
-					<idValue>4gsbss</idValue>
-				</identification>
-				<customField>
-					<customFieldType>NewCustomfield1</customFieldType>
-					<customFieldValue>Header_Custom_Field_From_Inbound_RTS</customFieldValue>
-				</customField>
-			</customsBroker>
-
-			<freightForwarder>
-				<partyRoleCode>FreightForwarder</partyRoleCode>
-				<organizationUid>5717988960036427</organizationUid>
-				<!-- <divisionUid>57354</divisionUid> -->
-				<name>adidas AG</name>
-				<longName>adidas AG</longName>
-				<contact>
-					<name>Member Services</name>
-					<emailAddress>vibhor.jain@infor.com</emailAddress>
-					<phone>852 2828-6888</phone>
-					<fax>852 2828-6888</fax>
-					<department>ABCD</department>
-					<region>state</region>
-				</contact>
-				<address>
-					<addressLine1>Adi-Dassler-Strasse 1</addressLine1>
-					<addressLine2>Adi-Dassler-Strasse 1</addressLine2>
-					<city>Boston</city>
-					<stateOrProvince>MA</stateOrProvince>
-					<postalCodeNumber>D-91074</postalCodeNumber>
-					<country>US</country>
-					<place>
-						<placeTypeCode>UNLocationCode</placeTypeCode>
-						<placeCode>HK01</placeCode>
-						<identification>
-							<idType>3453</idType>
-							<idValue>4gsbss</idValue>
-						</identification>
-						<name>Adidas Ag</name>
-					</place>
-				</address>
-				<identification>
-					<idType>3453</idType>
-					<idValue>4gsbss</idValue>
-				</identification>
-				<customField>
-					<customFieldType>NewCustomfield1</customFieldType>
-					<customFieldValue>Header_Custom_Field_From_Inbound_RTS</customFieldValue>
-				</customField>
 			</freightForwarder>
 
 			<manufacturer>
@@ -1297,9 +729,9 @@
 
 			<destinationLocation>
 				<locationTypeCode>AssemblyLine</locationTypeCode>
-				<name>Toowoomba4545B</name>
+				<name>Toowoomba</name>
 				<!-- <locationUid>34850</locationUid> -->
-				<longName>Toowoomba4545B</longName>
+				<longName>Toowoomba</longName>
 
 				<!-- <ownerOrganization>
 					<organizationUid>5717988960036427</organizationUid>
@@ -1409,7 +841,7 @@
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>ShortDescription</itemIdentifierTypeCode>
-					<itemIdentifierValue>VW</itemIdentifierValue>
+					<itemIdentifierValue>Mango</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>Size</itemIdentifierTypeCode>
@@ -1429,11 +861,11 @@
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>FreightClass</itemIdentifierTypeCode>
-					<itemIdentifierValue>50</itemIdentifierValue>
+					<itemIdentifierValue>70</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>CommodityClass</itemIdentifierTypeCode>
-					<itemIdentifierValue>Vehicle</itemIdentifierValue>
+					<itemIdentifierValue>Fruit</itemIdentifierValue>
 				</itemIdentifier>
 				<itemIdentifier>
 					<itemIdentifierTypeCode>CommodityDescription</itemIdentifierTypeCode>
@@ -1452,7 +884,7 @@
 					<itemDateTypeCode>PromisedDelivery</itemDateTypeCode>
 					<itemDateValue>2018-05-22T00:00:00Z</itemDateValue>
 				</itemDate>
-				<itemDate>
+				<!-- 	<itemDate>
 					<itemDateTypeCode>DeliveryWindowEnd</itemDateTypeCode>
 					<itemDateValue>2018-05-30T00:10:00Z</itemDateValue>
 				</itemDate>
@@ -1467,7 +899,7 @@
 				<itemDate>
 					<itemDateTypeCode>PickupWindowStart</itemDateTypeCode>
 					<itemDateValue>2018-04-22T00:00:00Z</itemDateValue>
-				</itemDate>
+				</itemDate> -->
 				<itemDate>
 					<itemDateTypeCode>ShipWindowEnd</itemDateTypeCode>
 					<itemDateValue>2018-04-25T00:00:00Z</itemDateValue>
@@ -1514,7 +946,10 @@
 				</measurement>
 			</baseItem>
 		</readyToShipOrderItem>
-		
+
+
+
+		<!-- Line Item #2-->			
 		<transportEquipment>
 			<transportEquipmentTypeCode>StandardGOH20</transportEquipmentTypeCode>
 			<equipmentType>20' Standard GOH</equipmentType>

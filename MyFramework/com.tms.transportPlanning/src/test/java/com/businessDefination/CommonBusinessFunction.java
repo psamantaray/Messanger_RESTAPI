@@ -27,6 +27,7 @@ import com.pageObject.TOFlexview;
 import com.relevantcodes.extentreports.LogStatus;
 import com.tms.transportPlanning.TestRunner;
 
+import cucumber.runtime.junit.Assertions;
 import dataTable.DataTable;
 import utility.UtilityMethods;
 
@@ -133,7 +134,7 @@ public class CommonBusinessFunction extends TestRunner {
 			gtnHomePage.homeLink.click();
 			logger.log(LogStatus.PASS, "Successfully landed on shipper user Home page");
 		}
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 
 		gtnHomePage.shadowUser.sendKeys(datatable.getValue("shadowUser"));
 		gtnHomePage.loginButton.click();
@@ -211,7 +212,7 @@ public class CommonBusinessFunction extends TestRunner {
 			e.printStackTrace();
 		}
 		if (homePage.state.getText().equals("Failed")) {
-			logger.log(LogStatus.FAIL, "Error occures on File processing: " + homePage.notes.getText());
+			logger.log(LogStatus.FAIL, "Error ocured on File processing: " + homePage.notes.getText());
 			throw new CustomExceptions("UO Creation failed  due to error in the file content");
 		}
 
@@ -248,7 +249,7 @@ public class CommonBusinessFunction extends TestRunner {
 			alt.dismiss();
 			homePage.messageUID.click();
 			Thread.sleep(5000);
-			while (homePage.boUID.getText().equals("") && !(homePage.state.getText().equals("Failed"))) {
+			while (homePage.boUID.getText().equals("") && !(homePage.state.getText().equals("Failed")) && !(homePage.state.getText().equals("Completed"))) {
 				driver.navigate().refresh();
 			}
 		} catch (Exception e) {
@@ -279,7 +280,6 @@ public class CommonBusinessFunction extends TestRunner {
 		wait.until(ExpectedConditions.visibilityOf(TOFlexview.orderNumber));
 		TOFlexview.orderNumber.sendKeys(orderNumber);
 		TOFlexview.apply.click();
-		wait.until(ExpectedConditions.invisibilityOfElementWithText(By.xpath(""), "Searching..."));
 		wait.until(ExpectedConditions.invisibilityOfAllElements(TOFlexview.searching));
 		int nosOfTOs = TOFlexview.transportOrders.size();
 		if (nosOfTOs > 0) {
@@ -333,61 +333,52 @@ public class CommonBusinessFunction extends TestRunner {
 	// FEF TO Items tab Validation --> Call this method after landed on FEF TO
 	// Page
 	public void FEFTOItemsTabValidation() throws InterruptedException {
-		DataTable dataTable = new DataTable();
 		int actLineItemsCount = 0;
-		String actLineItemNum = null;
-		String actProdName = null;
-		String actCommodity = null;
-		String actCommodityClass = null;
-
 		TODetailsPage toDetailPage = PageFactory.initElements(driver, TODetailsPage.class);
-		// if(driver.getTitle().equals("Transport Order Detail")) {
-
+		Assertion assertion =new Assertion();
+	
 		toDetailPage.itemsTab.click();
+		
 		// Master section validation
-
 		actLineItemsCount = toDetailPage.nosOfLineItems.size();
 		logger.log(LogStatus.INFO, "Total No. of Line items: " + actLineItemsCount);
-		/*
-		 * if
-		 * (actLineItemsCount==Integer.parseInt(dataTable.getValue("nosOfLines")
-		 * )){ logger.log(LogStatus.INFO,
-		 * "Total line items count: "+actLineItemsCount);
-		 * logger.log(LogStatus.PASS, "Total line items count --> PASS"); } else
-		 * logger.log(LogStatus.FAIL,
-		 * "Total line items count --> FAIL, Expected Value: " +
-		 * dataTable.getValue("lineItemsCount") + " Actual Value: " +
-		 * actLineItemsCount);
-		 */
 
 		for (int i = 0; i < actLineItemsCount; i++) {
 			logger.log(LogStatus.INFO, "Line# "+ (i+1) +"Master section validation Result: ");
 			
 			if (!(toDetailPage.lineItemNum.get(i).getText().equals("")))
-				logger.log(LogStatus.PASS, "Displayed Line Item Number: "+toDetailPage.lineItemNum.get(i).getText() );
-			else
+				logger.log(LogStatus.PASS, "Line Item Number: "+toDetailPage.lineItemNum.get(i).getText() );
+			else{
+				assertion.fail("Line Item Number is NULL for Line Number");
 				logger.log(LogStatus.FAIL, "Line Item Number is NULL for Line Number "+ toDetailPage.lineItemNum.get(i).getText());
+			}
 
 			if (!(toDetailPage.productName.get(i).getText().equals("")))
-				logger.log(LogStatus.PASS, "Displayed Product Name: "+toDetailPage.productName.get(i).getText());
-			else
+				logger.log(LogStatus.PASS, "Product Name: "+toDetailPage.productName.get(i).getText());
+			else{
+				assertion.fail("Product Name is NULL for Line Number");
 				logger.log(LogStatus.FAIL,"Prod Name is NULL for Line Item Number " + toDetailPage.lineItemNum.get(i).getText());
+			}
 
 			if (!(toDetailPage.commodity.get(i).getText().equals("")))
-				logger.log(LogStatus.PASS, "Displayed Commodity: "+toDetailPage.commodity.get(i).getText());
-			else
+				logger.log(LogStatus.PASS, "Commodity: "+toDetailPage.commodity.get(i).getText());
+			else{
+				assertion.fail("Commodity is NULL for Line Number");
 				logger.log(LogStatus.FAIL, "Commodity is NULL for line item Number "+toDetailPage.lineItemNum.get(i).getText());
+			}
 
 			if (!(toDetailPage.commodityClass.get(i).getText().equals("")))
-				logger.log(LogStatus.PASS, "Displayed Commodity Class: "+toDetailPage.commodityClass.get(i).getText() );
-			else
+				logger.log(LogStatus.PASS, "Commodity Class: "+toDetailPage.commodityClass.get(i).getText() );
+			else{
+				assertion.fail("Commodity Class is NULL for Line Number");
 				logger.log(LogStatus.FAIL, "Commodity Class is NULL for line item Number "+toDetailPage.lineItemNum.get(i).getText());
+			}
 
-			// Details Validation
+			// Details section Validation
 			toDetailPage.expandButton.get(i).click();
 			Thread.sleep(2000);
 			if (toDetailPage.lineItemDetails.size() > 0)
-				logger.log(LogStatus.PASS, "Line Item Details displayed");
+				logger.log(LogStatus.PASS, "Line Item Details is displayed");
 			else {
 				logger.log(LogStatus.FAIL, "Line item details are not getting displayed on master section expand");
 			}
